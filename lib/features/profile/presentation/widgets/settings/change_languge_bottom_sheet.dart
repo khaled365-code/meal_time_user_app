@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/localization_cubit/localization_cubit.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -44,8 +45,7 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                 GestureDetector(
                    onTap: () async
                     {
-                      // context.setLocale(Locale('ar'));
-                     await CacheHelper().saveData(key: ApiKeys.appCurrentLanguage, value: 'ar');
+                      LocalizationCubit.get(context).changeLanguageToArabic();
                     },
                     child: Text('Change to Arabic (AR)',style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
                 SpaceWidget(height: 20,),
@@ -56,9 +56,7 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                 GestureDetector(
                     onTap: () async
                     {
-                      // context.setLocale(Locale('en'));
-                     await CacheHelper().saveData(key: ApiKeys.appCurrentLanguage, value: 'en');
-
+                      LocalizationCubit.get(context).changeLanguageToEnglish();
                     },
                     child: Text('Keep English',style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
                 SpaceWidget(height: 20,),
