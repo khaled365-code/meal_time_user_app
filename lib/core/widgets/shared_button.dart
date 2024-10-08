@@ -29,7 +29,8 @@ class SharedButton extends StatelessWidget {
           ),
         )
       ),
-        onPressed: onPressed, child: Text(btnText,style: btnTextStyle??AppTextStyles.bold14(context).copyWith(
+        onPressed: onPressed,
+        child: Text(btnText,style: btnTextStyle??AppTextStyles.bold14(context).copyWith(
       color: AppColors.white,
     ),));
   }

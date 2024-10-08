@@ -16,10 +16,12 @@ import '../../features/profile/data/repos/profile_repo_implementation.dart';
 import '../../features/profile/presentation/cubits/change_password_cubit/change_password_cubit.dart';
 import '../../features/profile/presentation/cubits/delete_account_cubit/delete_account_cubit.dart';
 import '../../features/profile/presentation/cubits/edit_profile_cubit/edit_profile_cubit.dart';
+import '../../features/profile/presentation/cubits/faq_cubit/faq_cubit.dart';
 import '../../features/profile/presentation/cubits/get_specific_chef_meals_cubit/get_specific_chef_meals_cubit.dart';
 import '../../features/profile/presentation/cubits/get_user_address_cubit/get_user_address_cubit.dart';
 import '../../features/profile/presentation/cubits/logout_cubit/logout_cubit.dart';
 import '../../features/profile/presentation/cubits/notifications_cubit/notifications_cubit.dart';
+import '../../features/profile/presentation/cubits/settings_cubit/settings_cubit.dart';
 import '../database/api/dio_consumer.dart';
 
 GetIt locator=GetIt.instance;
@@ -50,6 +52,8 @@ setUpLocator()
   locator.registerFactory(() => LoginCubit(authRepoImplementation: locator.get<AuthRepoImplementation>()),);
   locator.registerFactory(() => SignupCubit(authRepoImplementation: locator.get<AuthRepoImplementation>()),);
   locator.registerFactory(() => ForgetPassCubit(authRepoImplementation: locator.get<AuthRepoImplementation>()),);
+  locator.registerFactory(() => FaqCubit(),);
+  locator.registerFactory(() => SettingsCubit(),);
 
 
 }

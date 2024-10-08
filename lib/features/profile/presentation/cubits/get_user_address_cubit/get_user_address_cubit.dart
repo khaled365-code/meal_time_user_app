@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-
-import '../../../../../core/commons/global_models/adress_model/AddressComponents.dart';
-import '../../../../../core/commons/global_models/adress_model/AddressModel.dart';
+import '../../../../../core/commons/global_models/user_address_model/address_components.dart';
+import '../../../../../core/commons/global_models/user_address_model/address_model.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
 import '../../../../../core/utils/services/get_device_address_service.dart';

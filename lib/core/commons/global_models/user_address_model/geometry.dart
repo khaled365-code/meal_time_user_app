@@ -1,5 +1,5 @@
-import 'Location.dart';
-import 'Viewport.dart';
+import 'address_location.dart';
+import 'viewport.dart';
 
 /// location : {"lat":31.0681301,"lng":31.408514}
 /// location_type : "GEOMETRIC_CENTER"
@@ -12,11 +12,11 @@ class Geometry {
       this.viewport,});
 
   Geometry.fromJson(dynamic json) {
-    location = json['location'] != null ? Location.fromJson(json['location']) : null;
+    location = json['location'] != null ? AddressLocation.fromJson(json['location']) : null;
     locationType = json['location_type'];
     viewport = json['viewport'] != null ? Viewport.fromJson(json['viewport']) : null;
   }
-  Location? location;
+  AddressLocation? location;
   String? locationType;
   Viewport? viewport;
 

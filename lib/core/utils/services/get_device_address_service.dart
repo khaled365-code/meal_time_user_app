@@ -2,7 +2,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:location/location.dart';
-import '../../commons/global_models/adress_model/AddressModel.dart';
+import '../../commons/global_models/user_address_model/address_model.dart';
 import 'location_service.dart';
 
 class DeviceAddressService

@@ -1,6 +1,6 @@
-import 'AddressComponents.dart';
-import 'Geometry.dart';
-import 'PlusCode.dart';
+import 'address_components.dart';
+import 'geometry.dart';
+import 'plus_code.dart';
 
 /// address_components : [{"long_name":"Egypt","short_name":"EG","types":["country","political"]},{"long_name":"Mansoura Qism 2","short_name":"Mansoura Qism 2","types":["administrative_area_level_3","political"]},{"long_name":"El Mansoura 2","short_name":"El Mansoura 2","types":["administrative_area_level_2","political"]},{"long_name":"Dakahlia Governorate","short_name":"Dakahlia Governorate","types":["administrative_area_level_1","political"]},{"long_name":"7661443","short_name":"7661443","types":["postal_code"]}]
 /// formatted_address : "المنصورة-الزقازيق، المنصورة (قسم 2)، المنصورة، الدقهلية،، المنصورة (قسم 2)، ثان المنصورة، الدقهلية،، Mansoura Qism 2, El Mansoura 2, Dakahlia Governorate 7661443, Egypt"

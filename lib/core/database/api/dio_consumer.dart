@@ -8,11 +8,13 @@ import 'api_consumer.dart';
 import 'api_interceptor.dart';
 import 'end_points.dart';
 
-class DioConsumer extends ApiConsumer {
+class DioConsumer extends ApiConsumer
+{
 
   final Dio dio;
 
-  DioConsumer({required this.dio}){
+  DioConsumer({required this.dio})
+  {
     dio.options.baseUrl=EndPoints.baseUrl;
     dio.interceptors.add(ApiInterceptor());
     dio.interceptors.add(LogInterceptor(
@@ -22,14 +24,16 @@ class DioConsumer extends ApiConsumer {
       request: true,
       responseHeader: true,
       responseBody: true,
-
+      logPrint: print,
     ));
-
-
   }
+
+
   @override
-  Future<dynamic> delete(String pathName, {dynamic data, Map<String, dynamic>? queryParams,bool formData=false}) async {
-    try{
+  Future<dynamic> delete(String pathName, {dynamic data, Map<String, dynamic>? queryParams,bool formData=false}) async
+  {
+    try
+    {
 
       final response=await dio.delete(pathName,data :formData? FormData.fromMap(data):data,queryParameters: queryParams);
       return response.data;

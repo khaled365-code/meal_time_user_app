@@ -1,12 +1,12 @@
 /// lat : 31.0681301
 /// lng : 31.408514
 
-class Location {
-  Location({
+class AddressLocation {
+  AddressLocation({
       this.lat, 
       this.lng,});
 
-  Location.fromJson(dynamic json) {
+  AddressLocation.fromJson(dynamic json) {
     lat = json['lat'];
     lng = json['lng'];
   }

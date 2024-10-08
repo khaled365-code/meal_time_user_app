@@ -55,8 +55,11 @@ void handleExceptions(DioException e)
           throw ServerException(
               errorModel: ErrorModel.fromJson(e.response!.data));
 
-
         case 504:
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+
+        default:
           throw ServerException(
               errorModel: ErrorModel.fromJson(e.response!.data));
       }
@@ -69,5 +72,9 @@ void handleExceptions(DioException e)
     case DioExceptionType.unknown:
       throw ServerException(
           errorModel:ErrorModel.fromJson(e.response!.data));
+
+    default:
+      throw ServerException(
+          errorModel: ErrorModel.fromJson(e.response!.data));
   }
 }

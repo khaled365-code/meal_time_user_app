@@ -195,7 +195,6 @@ flutter:
       - assets/icons/
       - assets/gif/
       - assets/lotties/
-      - assets/translations/
       - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see

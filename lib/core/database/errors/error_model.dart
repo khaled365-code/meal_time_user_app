@@ -10,7 +10,8 @@ class ErrorModel {
 
 
 
-  factory ErrorModel.fromJson(dynamic json) {
+  factory ErrorModel.fromJson(dynamic json)
+   {
     return ErrorModel(
         status : json['status'],
         errorMessage : json['ErrorMessage'],
@@ -22,7 +23,8 @@ class ErrorModel {
   String? errorMessage;
   List<String>? error;
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson()
+  {
     final map = <String, dynamic>{};
     map['status'] = status;
     map['ErrorMessage'] = errorMessage;

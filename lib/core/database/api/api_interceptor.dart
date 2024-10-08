@@ -20,9 +20,11 @@ class ApiInterceptor extends Interceptor
       else if (data is Map)
       {
         contentType = Headers.formUrlEncodedContentType;
-      } else if (data is String) {
+      } else if (data is String)
+      {
         contentType = Headers.jsonContentType;
-      } else if (data != null) {
+      } else if (data != null)
+      {
         contentType = Headers.textPlainContentType; // Can be removed if unnecessary.
       } else
       {

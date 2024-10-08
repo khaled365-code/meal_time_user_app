@@ -1,12 +1,7 @@
 
 
-
-import 'dart:developer';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:workmanager/workmanager.dart';
-import 'package:timezone/data/latest.dart' as tz;
-import 'package:timezone/timezone.dart' as tz;
 
 import 'local_notifications_service.dart';
 
@@ -36,14 +31,6 @@ class WorkManagerService
   }
 
 
-
-  static Future<void> setCurrentDeviceLocation() async
-  {
-    tz.initializeTimeZones();
-    final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    tz.setLocalLocation(tz.getLocation(currentTimeZone));
-  }
-
   static Future<void> cancelTask({required String uniqueName}) async
   {
     await workManager.cancelByUniqueName(uniqueName);
@@ -62,7 +49,6 @@ class WorkManagerService
 {
   Workmanager().executeTask((taskName, inputData) async
   {
-    log('hello egypt');
     await LocalNotificationsService.showDailyScheduledNotification();
     return Future.value(true);
   },);

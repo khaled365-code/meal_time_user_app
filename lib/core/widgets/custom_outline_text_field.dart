@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_meal_time_app/core/utils/app_colors.dart';
 import 'package:new_meal_time_app/core/utils/app_text_styles.dart';
 
-class CustomOutlineTextField extends StatelessWidget {
+class CustomOutlineTextField extends StatelessWidget
+{
   const CustomOutlineTextField({super.key, this.contentPadding, this.hintText, this.hintStyle, this.suffixIcon, this.obscureText, this.keyboardType, this.filledTextStyle, this.crusorColor, required this.controller, this.validator, this.onFieldSubmitted, this.inputFormatters, this.fieldFocusNode, this.prefixIcon, this.fillColor, this.borderRadius, this.textInputAction, this.maxLines, this.maxLength, this.minLines, this.onChanged});
 
   final EdgeInsetsGeometry? contentPadding;

@@ -12,8 +12,8 @@ class SpaceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width?.w??null,
-      height: height?.h??null,
+      width: width?.w,
+      height: height?.h,
     );
   }
 }

@@ -63,7 +63,7 @@ class AppRouter {
       case Routes.faqScreen:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-              create: (context) => FaqCubit(),
+              create: (context) => locator<FaqCubit>(),
               child: FaqScreen(),
             ),
             settings: routeSettings);
@@ -87,7 +87,7 @@ class AppRouter {
       case Routes.mainSettingsScreen:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-              create: (context) => SettingsCubit(),
+              create: (context) => locator<SettingsCubit>(),
               child: MainSettingsScreen(),
             ),
             settings: routeSettings);

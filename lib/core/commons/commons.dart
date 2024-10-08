@@ -81,7 +81,7 @@ Future uploadImageToAPI(XFile image) async
 Future<XFile?> imagePick({required ImageSource imageSource}) async
 {
   XFile? image =await ImagePicker().pickImage(source: imageSource);
-  return image!=null? image : null;
+  return image;
 
 }
 
@@ -182,10 +182,12 @@ getAmorPm(DateTime dateTime)
 
 getCurrentGreetingTime()
 {
-  if (DateTime.now().hour < 12) {
+  if (DateTime.now().hour < 12)
+  {
     return 'Good Morning';
   }
-  else if (DateTime.now().hour < 17) {
+  else if (DateTime.now().hour < 17)
+  {
     return 'Good Afternoon';
   }
   else

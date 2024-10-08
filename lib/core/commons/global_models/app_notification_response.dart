@@ -1,8 +1,5 @@
 
 
-import 'package:hive/hive.dart';
-
-
 
 class AppNotificationResponse
 {

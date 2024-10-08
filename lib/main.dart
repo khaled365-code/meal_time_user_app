@@ -19,7 +19,7 @@ void main() async
 {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait([
-    CacheHelper().init(),
+    CacheHelper.init(),
     LocalNotificationsService.init(),
     Hive.initFlutter(),
 

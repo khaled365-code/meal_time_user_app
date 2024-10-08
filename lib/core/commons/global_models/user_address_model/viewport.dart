@@ -1,5 +1,5 @@
-import 'Northeast.dart';
-import 'Southwest.dart';
+import 'northeast.dart';
+import 'southwest.dart';
 
 /// northeast : {"lat":31.0694790802915,"lng":31.4098629802915}
 /// southwest : {"lat":31.0667811197085,"lng":31.4071650197085}
