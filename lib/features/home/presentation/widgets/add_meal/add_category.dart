@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
 import '../../cubits/add_meal_cubit/add_meal_cubit.dart';
@@ -16,7 +18,7 @@ class AddMealCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Meal category',
+        title: 'mealCategory',
         childWidget: Container(
           decoration: BoxDecoration(
             color: AppColors.cF0F5FA,
@@ -35,7 +37,7 @@ class AddMealCategoryWidget extends StatelessWidget {
                     items: AddMealCubit.get(context).categoriesList.map(
                           (e) => DropdownMenuItem(
                           value: e,
-                              child: Text(e,style: AppTextStyles.regular14(context).copyWith(
+                              child: Text(e.tr(context),style: AppTextStyles.regular14(context).copyWith(
                             color: AppColors.cA0A5BA
                         ),)),
                     ).toList(),

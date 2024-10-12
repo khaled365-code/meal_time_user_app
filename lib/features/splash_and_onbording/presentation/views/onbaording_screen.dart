@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -25,9 +26,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   List<OnboardingDataModel>onboardingDataModelList =
   [
-    OnboardingDataModel(image: ImageConstants.onboardingImage1, title: 'All your favorites', subtitle: 'Get all your loved foods in one once place,\nyou just place the meal we do the rest'),
-    OnboardingDataModel(image: ImageConstants.onboardingImage2, title: 'Meal from choosen chef', subtitle: 'Get all your loved foods in one once place,\nyou just place the meal we do the rest'),
-    OnboardingDataModel(image: ImageConstants.onboardingImage3, title: 'Free delivery offers', subtitle: 'Get all your loved foods in one once place,\nyou just place the meal we do the rest'),
+    OnboardingDataModel(image: ImageConstants.onboardingImage1, title: 'allYourFavorites', subtitle: 'getAllLovedFoods'),
+    OnboardingDataModel(image: ImageConstants.onboardingImage2, title: 'mealFromChosenChef', subtitle: 'getAllLovedFoods'),
+    OnboardingDataModel(image: ImageConstants.onboardingImage3, title: 'freeDeliveryOffers', subtitle: 'getAllLovedFoods'),
 
   ];
 
@@ -85,7 +86,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
             SpaceWidget(height: 69.h,),
-            SharedButton(btnText: currentIndex!=2?'Next':'Get Started',
+            SharedButton(btnText: currentIndex!=2?
+            'next'.tr(context):'getStarted'.tr(context),
               onPressed: ()
               {
                 if(currentIndex!=2)
@@ -104,7 +106,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 {
                   navigate(context: context, route: Routes.loginScreen,replacement: true);
                 },
-                child: Text('Skip',style: AppTextStyles.regular16(context).copyWith(color: Color(0xff646982)),)):SizedBox.shrink(),
+                child: Text('skip'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: Color(0xff646982)),)):SizedBox.shrink(),
             currentIndex!=2? SizedBox(height: 40,):SizedBox(height: 59,),
 
 

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,10 +17,10 @@ class AddMealPriceTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Meal Price',
+        title: 'mealPrice',
         childWidget: CustomOutlineTextField(
           controller: AddMealCubit.get(context).mealPriceController,
-          hintText: 'write meal price here',
+          hintText: 'writeMealPrice'.tr(context),
           inputFormatters:
           [
             FilteringTextInputFormatter.digitsOnly,
@@ -29,7 +31,7 @@ class AddMealPriceTextField extends StatelessWidget {
           validator: (value) {
             if(value!.isEmpty)
             {
-              return 'please enter meal price';
+              return 'pleaseMealPrice'.tr(context);
             }
             else
             {

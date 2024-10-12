@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -15,7 +16,10 @@ import '../widgets/available_meals/available_meals_loading_widget.dart';
 import '../widgets/available_meals/grid_meal_item.dart';
 import '../widgets/available_meals/no_meals_yet_widget.dart';
 
-class AllMealsScreen extends StatelessWidget {
+
+
+class AllMealsScreen extends StatelessWidget
+{
   const AllMealsScreen({super.key});
 
   @override
@@ -30,12 +34,12 @@ class AllMealsScreen extends StatelessWidget {
               if(await InternetConnectionCheckingService.checkInternetConnection()==true)
                 {
                  await SystemMealsCubit.get(context).getAllMealsFromApiFun();
-                 buildScaffoldMessenger(context: context, msg: 'Meals fetched successfully',iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),);
+                 buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),);
 
                 }
               else
                 {
-                  buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+                  buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
                 }
             },
             color: AppColors.primaryColor,
@@ -47,11 +51,9 @@ class AllMealsScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:
                     [
-                      SpaceWidget(height: 24,),
+                      SpaceWidget(height: 32,),
                       AllMealsAppBar(),
                       SpaceWidget(height: 24,),
-                      AllAvailableMeals(),
-                      SpaceWidget(height: 24,)
 
                     ],
                   ),
@@ -66,27 +68,29 @@ class AllMealsScreen extends StatelessWidget {
                       else if (state is GetAllMealsSuccessState
                           && SystemMealsCubit.get(context).allMealsModel?.meals != null)
                       {
+
                         return SliverToBoxAdapter(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              AllAvailableMealsText(),
+                              SpaceWidget(height: 24,),
                               GridView.builder(
                                 shrinkWrap: true,
                                 physics: NeverScrollableScrollPhysics(),
-                                padding: EdgeInsetsDirectional.only(
-                                    start: 24.w,
-                                    end: 24.w),
+                                padding: EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    mainAxisSpacing: 21.h,
-                                    crossAxisSpacing: 21.w,
-                                    mainAxisExtent: 200.h
+                                    mainAxisSpacing: 21,
+                                    crossAxisSpacing: 21,
+                                    childAspectRatio: 153/172
                                 ),
-                                itemCount: SystemMealsCubit
-                                    .get(context)
+                                itemCount: SystemMealsCubit.get(context)
                                     .allMealsModel!
                                     .meals!
                                     .length,
-                                itemBuilder: (context, index) {
+                                itemBuilder: (context, index)
+                                {
                                   return GestureDetector(
                                     onTap: () {
                                       navigate(context: context,
@@ -98,10 +102,7 @@ class AllMealsScreen extends StatelessWidget {
                                     },
                                     child: GridMealItem(
                                       index: index,
-                                      mealsList: SystemMealsCubit
-                                          .get(context)
-                                          .allMealsModel!
-                                          .meals!,
+                                      mealsList: SystemMealsCubit.get(context).allMealsModel!.meals!,
                                       meal: SystemMealsCubit
                                           .get(context)
                                           .allMealsModel!
@@ -120,18 +121,19 @@ class AllMealsScreen extends StatelessWidget {
                       {
                         return SliverToBoxAdapter(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              AllAvailableMealsText(),
+                              SpaceWidget(height: 24,),
                               GridView.builder(
                                 shrinkWrap: true,
                                 physics: const NeverScrollableScrollPhysics(),
-                                padding: EdgeInsetsDirectional.only(
-                                    start: 24.w,
-                                    end: 24.w),
+                                padding: EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    mainAxisSpacing: 21.h,
-                                    crossAxisSpacing: 21.w,
-                                    mainAxisExtent: 200.h
+                                    mainAxisSpacing: 21,
+                                    crossAxisSpacing: 21,
+                                    childAspectRatio: 153/172
                                 ),
                                 itemCount: SystemMealsCubit
                                     .get(context)
@@ -181,7 +183,7 @@ class AllMealsScreen extends StatelessWidget {
                         return AllAvailableMealsLoadingWidget();
                       }
                     }),
-                SliverToBoxAdapter(child: SpaceWidget(height: 30,)),
+                SliverToBoxAdapter(child: SpaceWidget(height: 80,)),
               ],
             ),
           )),
@@ -192,16 +194,17 @@ class AllMealsScreen extends StatelessWidget {
   _buildFloatingButton(BuildContext context)
   {
     return FloatingActionButton(
-        backgroundColor: AppColors.c181C2E,
+        backgroundColor: AppColors.c121223,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100.r),
         ),
-        onPressed: () {
+        onPressed: ()
+        {
           navigate(context: context, route: Routes.addMealScreen);
         },
         child: Center(child: Icon(
-          Icons.add, color: AppColors.white, size: 27.sp,))
+          Icons.add, color: AppColors.white, size: 30.sp,))
     );
   }
 

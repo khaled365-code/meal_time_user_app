@@ -2,6 +2,8 @@
 
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -48,13 +50,17 @@ class HomeMealContainer extends StatelessWidget {
             children: [
               SvgPicture.asset(ImageConstants.priceIcon,colorFilter: ColorFilter.mode(AppColors.cFF7622, BlendMode.srcIn),),
               SpaceWidget(width: 9,),
+              isArabic()==false?
               Text(meal.price.toString(),style: AppTextStyles.bold16(context).copyWith(
+                  color: AppColors.c181C2E
+              ),):
+              Text(translateNumbersToArabic(meal.price.toString()),style: AppTextStyles.bold16(context).copyWith(
                   color: AppColors.c181C2E
               ),),
               Spacer(),
               SvgPicture.asset(ImageConstants.categoryIcon,colorFilter: ColorFilter.mode(AppColors.cFF7622, BlendMode.srcIn),),
               SpaceWidget(width: 9,),
-              Text(meal.category??'',style: AppTextStyles.regular14(context).copyWith(
+              Text('${meal.category}'.tr(context),style: AppTextStyles.regular14(context).copyWith(
                   color: AppColors.c181C2E
               ),),
               Spacer(),

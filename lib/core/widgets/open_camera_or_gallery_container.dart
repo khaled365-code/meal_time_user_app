@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:new_meal_time_app/core/utils/app_assets.dart';
 import 'package:new_meal_time_app/core/utils/app_colors.dart';
 import 'package:new_meal_time_app/core/utils/app_text_styles.dart';
@@ -40,7 +42,7 @@ class OpenCameraOrGalleryContainer extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.only(start: 15.w,top: 15.h),
-                  child: Text('Complete action using',style: AppTextStyles.bold18(context).copyWith(color: AppColors.white),),
+                  child: Text('completeActionUsing'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.white),),
                 ),
               ),
 
@@ -75,7 +77,7 @@ class OpenCameraOrGalleryContainer extends StatelessWidget {
                                   height: 50.h,
                                   child: Image.asset(ImageConstants.galleryAndroidImage)),
                               SpaceWidget(height: 7,),
-                              Text('Gallery',style: AppTextStyles.regular16(context).copyWith(color: AppColors.white),),
+                              Text('gallery'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.white),),
                             ],
                           ),
                         ),
@@ -97,7 +99,7 @@ class OpenCameraOrGalleryContainer extends StatelessWidget {
                                   height: 50.h,
                                   child: Image.asset(ImageConstants.cameraAndroidImage)),
                               SpaceWidget(height: 7,),
-                              Text('Camera',style: AppTextStyles.regular16(context).copyWith(color: AppColors.black),),
+                              Text('camera'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.black),),
                             ],
                           ),
                         ),

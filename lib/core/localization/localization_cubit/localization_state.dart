@@ -8,3 +8,5 @@ final class LocalizationInitial extends LocalizationState {}
 final class LanguageSwitchedToArabicState extends LocalizationState {}
 
 final class LanguageSwitchedToEnglishState extends LocalizationState {}
+
+

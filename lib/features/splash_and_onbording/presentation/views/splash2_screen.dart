@@ -26,7 +26,8 @@ class _Splash2ScreenState extends State<Splash2Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
+          child: isArabic()==false?
+          Column(
             children:
             [
               Align(
@@ -38,9 +39,9 @@ class _Splash2ScreenState extends State<Splash2Screen> {
               Align(
                   alignment: AlignmentDirectional.bottomEnd,
                   child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,)),
-
             ],
-          )),
+          ):
+          Center(child: Image.asset(ImageConstants.splashLogoSmallImage,fit: BoxFit.cover,),)),
     );
   }
 

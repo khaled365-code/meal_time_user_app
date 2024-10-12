@@ -2,6 +2,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
@@ -16,7 +18,7 @@ class ConfirmPassField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Confirm Password',
+        title: 'confirmPassword',
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           suffixIcon: GestureDetector(
@@ -35,11 +37,11 @@ class ConfirmPassField extends StatelessWidget {
           {
             if(value!.isEmpty)
             {
-              return 'You must confirm your password';
+              return 'youMustConfirmPassword'.tr(context);
             }
             if(ForgetPassCubit.get(context).confirmNewPasswordController.text!=ForgetPassCubit.get(context).newPasswordController.text)
             {
-              return 'passwords doesn\'t not match';
+              return 'passwordsNotMatch'.tr(context);
             }
             else
             {

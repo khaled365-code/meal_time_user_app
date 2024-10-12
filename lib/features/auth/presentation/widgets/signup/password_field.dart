@@ -3,8 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
 import '../../cubits/signup_cubit/signup_cubit.dart';
@@ -17,7 +17,7 @@ class PasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Password',
+      title: 'password',
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
@@ -34,11 +34,11 @@ class PasswordField extends StatelessWidget {
           validator: (value) {
             if (value!.isEmpty)
             {
-              return 'You must enter your password';
+              return 'mustEnterPassword'.tr(context);
             }
             else if(SignupCubit.get(context).passwordController.text != SignupCubit.get(context).confirmPassController.text)
             {
-              return 'Passwords does not match';
+              return 'passwordsNotMatch'.tr(context);
             }
             else
             {

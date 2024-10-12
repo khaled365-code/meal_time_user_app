@@ -1,7 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,15 +18,18 @@ class MinChargeField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Min Charge',
+      title: 'minCharge',
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
         child: CustomOutlineTextField(
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly
+          ],
           validator: (value) {
             if (value!.isEmpty)
             {
-              return 'You must enter your minimum charge';
+              return 'mustEnterMinCharge'.tr(context);
             }
             else {
               return null;

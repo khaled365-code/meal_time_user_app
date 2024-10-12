@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
@@ -16,7 +17,7 @@ class NewPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'New Password',
+        title: 'newPassword',
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           obscureText: ForgetPassCubit.get(context).newPasswordObscure,
@@ -35,11 +36,11 @@ class NewPasswordField extends StatelessWidget {
           {
             if(value!.isEmpty)
             {
-              return 'You must enter your password';
+              return 'youMustPassword'.tr(context);
             }
             if(ForgetPassCubit.get(context).confirmNewPasswordController.text!=ForgetPassCubit.get(context).newPasswordController.text)
             {
-              return 'passwords doesn\'t not match';
+              return 'passwordsNotMatch'.tr(context);
             }
             else
             {

@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -26,12 +27,12 @@ class FavouriteMealWidget extends StatelessWidget {
         [
          Row(
            children: [
-             Text(meal.category??'',style: AppTextStyles.regular14(context).copyWith(
+             Text(meal.category!.tr(context),style: AppTextStyles.regular14(context).copyWith(
                color: AppColors.c181C2E
              ),),
              SpaceWidget(width: 28,),
              ongoingMeal==true?
-             Text('Completed',style: AppTextStyles.bold14(context).copyWith(
+             Text('completed'.tr(context),style: AppTextStyles.bold14(context).copyWith(
                color: AppColors.c059C6A
              ),):SizedBox.shrink()
            ],
@@ -82,7 +83,11 @@ class FavouriteMealWidget extends StatelessWidget {
                        IntrinsicHeight(
                          child: Row(
                            children: [
+                             isArabic()==false?
                              Text('\$${meal.price}',style: AppTextStyles.bold14(context).copyWith(
+                                 color: AppColors.c181C2E
+                             ),):
+                             Text('${translateNumbersToArabic(meal.price)}\$',style: AppTextStyles.bold14(context).copyWith(
                                  color: AppColors.c181C2E
                              ),),
                              ongoingMeal==false?
@@ -100,10 +105,13 @@ class FavouriteMealWidget extends StatelessWidget {
                                        text:
                                    TextSpan(
                                        children: [
-                                         TextSpan(text: '${formatDate(dateTime: DateTime.parse(meal.createdAt!),monthName: true)},',style: AppTextStyles.regular14(context).copyWith(
+                                         TextSpan(text: isArabic()==false? '${formatDate(dateTime: DateTime.parse(meal.createdAt!),monthName: true,context: context)},':
+                                             '${translateNumbersToArabic(formatDate(dateTime: DateTime.parse(meal.createdAt!),monthName: true,isArabic: true,context: context))},',style: AppTextStyles.regular14(context).copyWith(
                                              color: AppColors.c6B6E82
                                          )),
-                                         TextSpan(text: ' ${formatClock(DateTime.parse(meal.createdAt!))}',style: AppTextStyles.regular14(context).copyWith(
+                                         TextSpan(text: isArabic()==false?
+                                         ' ${formatClock(dateTime: DateTime.parse(meal.createdAt!))}':
+                                         ' ${translateNumbersToArabic(formatClock(dateTime: DateTime.parse(meal.createdAt!)))}',style: AppTextStyles.regular14(context).copyWith(
                                              color: AppColors.c6B6E82
                                          )),
                                        ]
@@ -119,7 +127,8 @@ class FavouriteMealWidget extends StatelessWidget {
                                    )
                                  ],
                                ),
-                             ): SizedBox.shrink()
+                             ): 
+                             SizedBox.shrink()
                            ],
                          ),
                        ),
@@ -153,7 +162,7 @@ class FavouriteMealWidget extends StatelessWidget {
                   {
                     FavouritesAndHistoryCubit.get(context).addToHistoryFavouriteMeal(meal: meal,index: index);
                   },
-                  child: Text('Add to history',style: AppTextStyles.bold12(context).copyWith(
+                  child: Text('addToHistory'.tr(context),style: AppTextStyles.bold12(context).copyWith(
                     color: AppColors.white
                   ),))),
               SpaceWidget(width: 49,),
@@ -171,7 +180,7 @@ class FavouriteMealWidget extends StatelessWidget {
                       {
                         FavouritesAndHistoryCubit.get(context).removeOngoingFavouriteMeal(meal: meal,index: index);
                       },
-                      child: Text('Remove',style: AppTextStyles.bold12(context).copyWith(
+                      child: Text('remove'.tr(context),style: AppTextStyles.bold12(context).copyWith(
                           color: AppColors.cFF7622
                       ),)))
 

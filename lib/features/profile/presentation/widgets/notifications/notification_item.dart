@@ -58,10 +58,10 @@ class NotificationItem extends StatelessWidget {
                     text: TextSpan(
                   children: [
                     TextSpan(
-                      text: formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true).toString(),style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)
+                      text: formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true,context: context).toString(),style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)
                     ),
-                    TextSpan(text: ' at ${formatClock(DateTime.parse(notificationModel.notificationTime))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)),
-                    TextSpan(text: ' ${getAmorPm(DateTime.parse(notificationModel.notificationTime))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,))
+                    TextSpan(text: ' at ${formatClock(dateTime: DateTime.parse(notificationModel.notificationTime))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)),
+                    TextSpan(text: ' ${getAmorPm(DateTime.parse(notificationModel.notificationTime),context)}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,))
                   ]
                 ))
             

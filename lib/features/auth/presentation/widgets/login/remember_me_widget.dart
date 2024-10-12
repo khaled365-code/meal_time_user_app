@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -38,13 +39,13 @@ class RememberMeWidget extends StatelessWidget {
         ),
         
         SpaceWidget(width: 10,),
-        Text('Remember me',style: AppTextStyles.regular13(context).copyWith(color: AppColors.c7E8A97),),
+        Text('rememberMe'.tr(context),style: AppTextStyles.regular13(context).copyWith(color: AppColors.c7E8A97),),
         Spacer(),
         GestureDetector(
           onTap: ()
           {
             navigate(context: context, route: Routes.forgetPassSendCodeScreen);
-          },child: Text('Forgot Password',style: AppTextStyles.regular14(context).copyWith(color: AppColors.primaryColor),)),
+          },child: Text('forgotPassword'.tr(context),style: AppTextStyles.regular14(context).copyWith(color: AppColors.primaryColor),)),
       ],
     );
   }

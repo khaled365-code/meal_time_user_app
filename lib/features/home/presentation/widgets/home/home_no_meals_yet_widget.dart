@@ -1,5 +1,8 @@
 
 
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -20,11 +23,11 @@ class HomeNoMealsYetWidget extends StatelessWidget {
        Column(
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-           Text('No Meals yet',style: AppTextStyles.medium_22_Poppins(context).copyWith(
+           Text('noMealsYet'.tr(context),style: AppTextStyles.medium_22_Poppins(context).copyWith(
              color: AppColors.c333333
            ),),
            SpaceWidget(height: 5,),
-           Text('Add your first meal\nto start',style: AppTextStyles.regular_14_Poppins(context).copyWith(
+           Text('addFirstMeal'.tr(context),style: AppTextStyles.regular_14_Poppins(context).copyWith(
              color: AppColors.cA0A5BA))
          ],
        ),

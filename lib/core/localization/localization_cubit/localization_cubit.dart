@@ -16,6 +16,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
   String currentLang='en';
 
 
+
   changeLanguageToArabic() async
   {
     if(currentLang=='ar')

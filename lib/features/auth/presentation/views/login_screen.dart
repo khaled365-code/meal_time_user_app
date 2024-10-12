@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -36,8 +37,8 @@ class LoginScreen extends StatelessWidget {
           children: [
             AuthHeaderWidget(
               hasBackButton: false,
-              title: 'Log In',
-              subTitle: 'Please sign in to your existing account',
+              title: 'logIn'.tr(context),
+              subTitle: 'pleaseSignIn'.tr(context),
             ),
             // 579/812
             Align(
@@ -83,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                           Padding(
                             padding:  EdgeInsetsDirectional.only(end: 24.w),
                             child: SharedButton(
-                              btnText: 'Log In',
+                              btnText: 'logIn'.tr(context),
                               onPressed: () async
                               {
                                 if(await InternetConnectionCheckingService.checkInternetConnection()==true)
@@ -102,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                                 }
                                 else
                                 {
-                                  buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+                                  buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
                                 }
                       
                               },
@@ -110,8 +111,8 @@ class LoginScreen extends StatelessWidget {
                           ),
                           SpaceWidget(height: 38,),
                           OptionsForAccountWidget(
-                            title1: 'Don\'t have an account?',
-                            title2: ' Sign up',
+                            title1: 'notHaveAccount'.tr(context),
+                            title2: 'signUp'.tr(context),
                             onActionTapped: ()
                             {
                               navigate(context: context, route: Routes.signUpScreen);
@@ -139,11 +140,17 @@ class LoginScreen extends StatelessWidget {
       {
         if(state.theError.error!=null)
           {
-            buildScaffoldMessenger(context: context, msg: state.theError.error!.toString().substring(1,state.theError.error!.toString().length-1));
+            buildScaffoldMessenger(
+                iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+                context: context,
+                msg: state.theError.error!.toString().substring(1,state.theError.error!.toString().length-1));
           }
         else
           {
-            buildScaffoldMessenger(context: context, msg: state.theError.errorMessage!);
+            buildScaffoldMessenger(
+                iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+                context: context,
+                msg: state.theError.errorMessage!);
           }
       }
     if(state is LoginSuccessState)

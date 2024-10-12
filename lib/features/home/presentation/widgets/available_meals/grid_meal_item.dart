@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -26,7 +27,7 @@ class GridMealItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
                 color: AppColors.c96969A,
-                blurRadius: 10,
+                blurRadius: 30,
                 offset: const Offset(12, 12),
                 spreadRadius: 0
             )
@@ -36,73 +37,75 @@ class GridMealItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.only(start: 17.w, end: 14.w),
+            padding:  EdgeInsetsDirectional.only(start: 10.w,end: 10.w,top: 5.h),
             child: Container(
               height: 84.h,
               decoration: meal.images!.first.isNotEmpty ? BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(10.r),
                   image: DecorationImage(
                       image: CachedNetworkImageProvider(
                           meal.images!.first
-                      ), fit: BoxFit.cover)
+                      ), fit: BoxFit.fill)
               ) : null,
             ),
           ),
-          Padding(
-            padding: EdgeInsetsDirectional.only(start: 12.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SpaceWidget(height: 15,),
-                Text(
-                    meal.name!,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.bold15(context).copyWith(
-                        color: AppColors.c32343E
-                    )),
-                SpaceWidget(height: 5,),
-                Padding(
-                  padding:  EdgeInsetsDirectional.only(end: 22.w),
-                  child: Text(
+          Expanded(
+            child: Padding(
+              padding: EdgeInsetsDirectional.only(start: 12.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Spacer(flex: 3,),
+                  Text(
+                      meal.name!.split(' ').last,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      meal.description!,
+                      style: AppTextStyles.bold15(context).copyWith(
+                          color: AppColors.c32343E
+                      )),
+                  SpaceWidget(height: 5,),
+                  Text(
+                      meal.category!,
                       style: AppTextStyles.regular13(context).copyWith(
                           color: AppColors.c646982
                       )),
-                ),
-                SpaceWidget(height: 8,),
-                Row(
-                  children: [
-                    Text('\$${meal.price}'.toString(), style: AppTextStyles
-                        .bold15(context).copyWith(
-                        color: AppColors.c32343E
-                    )),
-                    Spacer(),
-                    BlocBuilder<FavouritesAndHistoryCubit, FavouritesAndHistoryState>(
-                      builder: (context, state) {
-                        return Padding(
-                            padding: EdgeInsetsDirectional.only(end: 10.w),
-                            child: GestureDetector(
-                              onTap: () async
-                              {
-                                FavouritesAndHistoryCubit.get(context)
-                                    .changeFavouriteHeartShape(
-                                    index: index, mealList: mealsList);
-                              },
-                              child: AddMealContainerShapeToFavourites(
-                                isActivated: meal.itemIsSelected,
-                              ),
-                            )
-                        );
-                      },
-                    )
-                  ],
-                ),
-                SpaceWidget(height: 15,),
-
-              ],
+                  Spacer(),
+                  Row(
+                    children: [
+                      isArabic() == false?
+                      Text('\$${meal.price}'.toString(), style: AppTextStyles
+                          .bold16(context).copyWith(
+                          color: AppColors.c32343E
+                      )):
+                      Text('${translateNumbersToArabic(meal.price)}\$'.toString(), style: AppTextStyles
+                          .bold16(context).copyWith(
+                          color: AppColors.c32343E
+                      )),
+                      Spacer(),
+                      BlocBuilder<FavouritesAndHistoryCubit, FavouritesAndHistoryState>(
+                        builder: (context, state) {
+                          return Padding(
+                              padding: EdgeInsetsDirectional.only(end: 10.w),
+                              child: GestureDetector(
+                                onTap: () async
+                                {
+                                  FavouritesAndHistoryCubit.get(context)
+                                      .changeFavouriteHeartShape(
+                                      index: index, mealList: mealsList);
+                                },
+                                child: AddMealContainerShapeToFavourites(
+                                  isActivated: meal.itemIsSelected,
+                                ),
+                              )
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                  Spacer(flex: 4,),
+            
+                ],
+              ),
             ),
           ),
 

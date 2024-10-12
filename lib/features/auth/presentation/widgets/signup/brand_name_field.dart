@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,23 +17,24 @@ class BrandNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Brand Name',
+      title: 'brandName',
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
         child: CustomOutlineTextField(
+          maxLines: 1,
           validator: (value) {
             if (value!.isEmpty)
             {
-              return 'You must enter your brand name';
+              return 'mustEnterBrandName'.tr(context);
             }
             if(value.length<3)
             {
-              return 'brand name length must be at least 3 characters long';
+              return 'brandNameLeast3'.tr(context);
             }
             if(value.length>15)
             {
-              return 'brand name length must be less than or equal to 15 characters long';
+              return 'brandNameLess15'.tr(context);
             }
             else
             {

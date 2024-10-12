@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import 'package:new_meal_time_app/core/utils/app_assets.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -32,8 +35,8 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
                   AuthHeaderWidget(
                     incomingContext: context,
                     hasBackButton: true,
-                    title: 'Forgot Password',
-                    subTitle: 'Please sign in to your existing account',
+                    title: 'forgotPassword'.tr(context),
+                    subTitle: 'pleaseSignIn'.tr(context),
                   ),
                   Align(
                     alignment: AlignmentDirectional.bottomCenter,
@@ -64,7 +67,7 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
                                 child: SharedLoadingIndicator(),
                               ):
                               SharedButton(
-                                btnText: 'Send Code',
+                                btnText: 'sendCode'.tr(context),
                                 onPressed: () async
                                 {
                                   if(await InternetConnectionCheckingService.checkInternetConnection()==true)
@@ -82,7 +85,7 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
                                   }
                                   else
                                   {
-                                    buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+                                    buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
 
                                   }
 
@@ -109,20 +112,30 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
   {
     if (state is ForgetPassSendCodeSuccessState)
     {
-      buildScaffoldMessenger(context: context, msg: state.message);
+      buildScaffoldMessenger(
+        iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+          context: context,
+          msg: 'checkYourEmail'.tr(context));
       navigate(context: context,
           route: Routes.forgetPassChangeScreen,
           arg: forgetPassCubit.emailForForgetPassController.text);
     }
-    if (state is ForgetPassSendCodeFailureState) {
-      if (state.errorModel.error != null) {
-        buildScaffoldMessenger(context: context,
+    if (state is ForgetPassSendCodeFailureState) 
+    {
+      if (state.errorModel.error != null)
+      {
+        buildScaffoldMessenger(
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
             msg: state.errorModel.error!.toString().substring(
                 1, state.errorModel.error!.toString().length - 1));
       }
       else
       {
-        buildScaffoldMessenger(context: context, msg: state.errorModel.errorMessage!);
+        buildScaffoldMessenger(
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
+            msg: state.errorModel.errorMessage!);
       }
     }
   }

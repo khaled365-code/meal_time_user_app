@@ -67,11 +67,18 @@ class HomeAppBar extends StatelessWidget {
                       position: BadgePosition.topEnd(top: -28, end: -18),
                       badgeContent: BlocBuilder<SystemMealsCubit,SystemMealsState>(
                         builder: (context, state) {
-                          return Text('${SystemMealsCubit.get(context).allMealsModel?.meals?.length ??
+                          return isArabic()==false?
+                          Text('${SystemMealsCubit.get(context).allMealsModel?.meals?.length ??
                               SystemMealsCubit.get(context).cachedSystemMeals?.length??0}',
                             style: AppTextStyles.bold16(context).copyWith(
                               color: AppColors.white
-                          ),);
+                          ),):
+                          Text('${translateNumbersToArabic(
+                              SystemMealsCubit.get(context).allMealsModel?.meals?.length ??
+                              SystemMealsCubit.get(context).cachedSystemMeals?.length ??0)}',
+                            style: AppTextStyles.bold16(context).copyWith(
+                                color: AppColors.white
+                            ),);
                         },
                       ),
                       badgeAnimation: BadgeAnimation.scale(

@@ -18,7 +18,7 @@ class AllMealsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: 24.w),
+      padding: EdgeInsetsDirectional.only(start: 24.w,end: 24.w),
       child: Row(
         children: [
           GestureDetector(
@@ -33,51 +33,57 @@ class AllMealsAppBar extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: AppColors.cECF0F4
               ),
-              child: Center(
+              child:
+              isArabic()==false?
+              Center(
                 child: SvgPicture.asset(
                 width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
-            ),
+            ):
+              Center(
+                child: Transform.rotate(
+                  angle: 3.14159,
+                  child: SvgPicture.asset(
+                      width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                ),
+              ),
           )),
           Spacer(),
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: 24.w),
-            child: GestureDetector(
-              onTap: () async
-              {
-                if(SystemMealsCubit.get(context).allMealsModel?.meals!=null)
+          GestureDetector(
+            onTap: () async
+            {
+              if(SystemMealsCubit.get(context).allMealsModel?.meals!=null)
+                {
+                  for (int i = 0; i < SystemMealsCubit.get(context).allMealsModel!.meals!.length; i++)
                   {
-                    for (int i = 0; i < SystemMealsCubit.get(context).allMealsModel!.meals!.length; i++)
-                    {
-                      if (SystemMealsCubit.get(context).allMealsModel!.meals![i].itemIsSelected == true)
-                        {
-                         await FavouritesAndHistoryCubit.get(context).saveFavouriteMealToCache(SystemMealsCubit.get(context).allMealsModel!.meals!, i);
-                        }
-                    }
-                  }
-               else if (SystemMealsCubit.get(context).cachedSystemMeals!=null)
-                  {
-                    for (int i=0;i<SystemMealsCubit.get(context).cachedSystemMeals!.length;i++)
+                    if (SystemMealsCubit.get(context).allMealsModel!.meals![i].itemIsSelected == true)
                       {
-                        if(SystemMealsCubit.get(context).cachedSystemMeals![i].itemIsSelected==true)
-                          {
-                            await FavouritesAndHistoryCubit.get(context).saveFavouriteMealToCache(SystemMealsCubit.get(context).cachedSystemMeals!, i);
-                          }
+                       await FavouritesAndHistoryCubit.get(context).saveFavouriteMealToCache(SystemMealsCubit.get(context).allMealsModel!.meals!, i);
                       }
                   }
-                FavouritesAndHistoryCubit.get(context).getCachedFavouriteMeals();
-                navigate(context: context, route: Routes.favouritesScreen,arg: FavouritesAndHistoryCubit.get(context));
+                }
+             else if (SystemMealsCubit.get(context).cachedSystemMeals!=null)
+                {
+                  for (int i=0;i<SystemMealsCubit.get(context).cachedSystemMeals!.length;i++)
+                    {
+                      if(SystemMealsCubit.get(context).cachedSystemMeals![i].itemIsSelected==true)
+                        {
+                          await FavouritesAndHistoryCubit.get(context).saveFavouriteMealToCache(SystemMealsCubit.get(context).cachedSystemMeals!, i);
+                        }
+                    }
+                }
+              FavouritesAndHistoryCubit.get(context).getCachedFavouriteMeals();
+              navigate(context: context, route: Routes.favouritesScreen,arg: FavouritesAndHistoryCubit.get(context));
 
-              },
-              child: Container(
-                width: 45.w,
-                height: 49.h,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.c181C2E
-                ),
-                child: Center(child: Icon(
-                  Icons.favorite_outline_rounded, color: AppColors.white,)),
+            },
+            child: Container(
+              width: 45.w,
+              height: 49.h,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.c181C2E
               ),
+              child: Center(
+                  child: Icon(Icons.favorite_outline_rounded, color: AppColors.white,)),
             ),
           ),
         ],

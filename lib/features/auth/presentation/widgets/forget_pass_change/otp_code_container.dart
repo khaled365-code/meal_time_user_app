@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 
@@ -30,7 +31,7 @@ class OtpCodeContainer extends StatelessWidget {
         {
           if(value!.isEmpty)
             {
-              return 'empty!';
+              return 'empty'.tr(context);
             }
           else
             {

@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import 'package:new_meal_time_app/core/utils/app_assets.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/services/internet_connection_service.dart';
@@ -16,7 +19,7 @@ import '../widgets/forget_pass_change/confirm_pass_field.dart';
 import '../widgets/forget_pass_change/new_password_field.dart';
 import '../widgets/forget_pass_change/otp_code_container.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_styles.dart';
+
 
 class ForgetPassChangeScreen extends StatelessWidget {
   const ForgetPassChangeScreen({super.key});
@@ -34,8 +37,8 @@ class ForgetPassChangeScreen extends StatelessWidget {
           child: Stack(
             children: [
               AuthHeaderWidget(
-                  title: 'Verification',
-                  subTitle: 'We have sent a code to your email\n$emailText',
+                  title: 'verification'.tr(context),
+                  subTitle: 'WeSentCodeEmail'.tr(context)+'\n$emailText',
                  hasBackButton: true,
                 incomingContext: context,
               ),
@@ -67,7 +70,7 @@ class ForgetPassChangeScreen extends StatelessWidget {
                           ConfirmPassField(),
                           SpaceWidget(height: 24.h,),
                           NameAndTextFieldWidget(
-                              title: 'Code',
+                              title: 'code',
                               childWidget: Row(
                                 children: List.generate(
                                     6,
@@ -85,7 +88,7 @@ class ForgetPassChangeScreen extends StatelessWidget {
                           Center(
                             child: SharedLoadingIndicator(),):
                           SharedButton(
-                            btnText: 'Verify',
+                            btnText: 'verify'.tr(context),
                             onPressed: ()
                             {
                               verifyCodeActionButton(context, emailText);
@@ -109,19 +112,26 @@ class ForgetPassChangeScreen extends StatelessWidget {
     {
       if(state.errorModel.error!=null)
       {
-        buildScaffoldMessenger(context: context, msg: state.errorModel.error!.toString()
+        buildScaffoldMessenger(
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),            context: context, msg: state.errorModel.error!.toString()
             .substring(
             1,state.errorModel.error!.toString().length-1));
       }
       else
       {
-        buildScaffoldMessenger(context: context, msg: state.errorModel.errorMessage!);
+        buildScaffoldMessenger(
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
+            msg: state.errorModel.errorMessage!);
       }
     }
     if(state is ForgetPassChangeWithCodeSuccessState)
     {
-      buildScaffoldMessenger(context: context, msg: state.message);
-      navigate(context: context, route: Routes.loginScreen);
+      buildScaffoldMessenger(
+          context: context,
+          msg: 'youHaveSetNewPasswordSuccessfully'.tr(context),
+          iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon));
+      navigate(context: context, route: Routes.loginScreen,replacement: true);
     }
   }
 
@@ -147,7 +157,7 @@ class ForgetPassChangeScreen extends StatelessWidget {
       }
     else
       {
-        buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+        buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
       }
 
   }

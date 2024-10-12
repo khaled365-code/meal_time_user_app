@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/open_camera_or_gallery_container.dart';
@@ -31,7 +33,7 @@ class HealthCertificateDotContainer extends StatelessWidget {
           )),
         SpaceWidget(height: 24.h,),
         SharedButton(
-            btnText: 'Remove This Photo',
+            btnText: 'removeThisPhoto'.tr(context),
           onPressed: onDeletePhotoPressed,
         )
       ],
@@ -76,11 +78,11 @@ class HealthCertificateDotContainer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                        'Click to Upload',
+                        'clickToUpload'.tr(context),
                         style: AppTextStyles.regular16(context).copyWith(color: Color(0xff32343E))
                     ),
                     Text(
-                      ' Health Certificate',
+                      'healthCertificate'.tr(context),
                       style: AppTextStyles.regular16(context).copyWith(color: AppColors.primaryColor),
                     ),
                   ],

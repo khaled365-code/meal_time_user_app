@@ -22,9 +22,10 @@ class AddMealContainerShapeToFavourites extends StatelessWidget {
         color: AppColors.transparent,
       ),
       child: Center(
-          child: isActivated==true? SvgPicture.asset(
+          child: isActivated==true?
+          SvgPicture.asset(
           ImageConstants.fontAwesomeHeartIcon,
-          colorFilter:ColorFilter.mode(Colors.redAccent,BlendMode.srcIn),width: 20.w,height: 20.h):
+          colorFilter: ColorFilter.mode(Colors.redAccent,BlendMode.srcIn),width: 20.w,height: 20.h):
         SvgPicture.asset(
             ImageConstants.heartRegularIcon,width: 20.w,height: 20.h,)
       ),

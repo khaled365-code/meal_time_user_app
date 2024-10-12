@@ -2,6 +2,7 @@
 
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/commons/commons.dart';
@@ -18,7 +19,7 @@ class EmailFieldSendCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Email',
+        title: 'email',
         childWidget: CustomOutlineTextField(
           controller: ForgetPassCubit.get(context).emailForForgetPassController,
           hintText: 'example@gmail.com',
@@ -42,7 +43,7 @@ class EmailFieldSendCode extends StatelessWidget {
             }
             else
             {
-            buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+            buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
 
             }
           },
@@ -50,11 +51,11 @@ class EmailFieldSendCode extends StatelessWidget {
           {
             if (value!.isEmpty)
             {
-              return 'You must enter your email';
+              return 'youMustEmail'.tr(context);
             }
             if (EmailValidator.validate(value) == false)
             {
-              return 'invalid email address';
+              return 'invalidEmail'.tr(context);
             }
             else
             {

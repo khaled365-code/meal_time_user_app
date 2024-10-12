@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,7 +17,7 @@ class AddMealNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Meal Name',
+        title: 'mealName',
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           inputFormatters:
@@ -23,7 +25,7 @@ class AddMealNameTextField extends StatelessWidget {
             LengthLimitingTextInputFormatter(30)
           ],
           controller: AddMealCubit.get(context).mealNameController,
-          hintText: 'write meal name here',
+          hintText: 'writeMealName'.tr(context),
           onFieldSubmitted: (value)
           {
 
@@ -32,11 +34,11 @@ class AddMealNameTextField extends StatelessWidget {
           {
             if(value!.isEmpty)
             {
-              return 'please enter meal name';
+              return 'pleaseMealName'.tr(context);
             }
             if(value==' ')
               {
-                return 'please enter meal name';
+                return 'pleaseMealName'.tr(context);
               }
             else
             {

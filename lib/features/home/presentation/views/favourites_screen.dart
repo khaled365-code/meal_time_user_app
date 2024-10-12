@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import '../../../../core/commons/commons.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/space_widget.dart';
 import '../cubits/favourites_and_history_cubit/favourites_and_history_cubit.dart';
@@ -53,11 +55,10 @@ class FavouritesScreen extends StatelessWidget {
                         }
                         else
                           {
-                          return ListView.separated(
+                    return ListView.separated(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      padding:
-                      EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
+                      padding: EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
                       itemBuilder: (context, index) => FavouriteMealWidget(
                         index: index,
                         ongoingMeal: true,
@@ -66,9 +67,11 @@ class FavouritesScreen extends StatelessWidget {
                       separatorBuilder: (context, index) => SpaceWidget(
                         height: 24,
                       ),
-                      itemCount: FavouritesAndHistoryCubit.get(context).favouriteMealsList.length,
+                      itemCount: FavouritesAndHistoryCubit.get(context)
+                          .favouriteMealsList
+                          .length,
                     );
-                          }
+                  }
                       },
                     ),
                     SpaceWidget(height: 67,),
@@ -109,7 +112,8 @@ class FavouritesScreen extends StatelessWidget {
     );
   }
 
-  AppBar _buildAppBar(BuildContext context) {
+  AppBar _buildAppBar(BuildContext context)
+  {
     return AppBar(
       backgroundColor: AppColors.white,
         leading: Padding(
@@ -120,18 +124,24 @@ class FavouritesScreen extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-              width: 60.w,
-              height: 60.h,
+              width: 45.w,
+              height: 45.h,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColors.cECF0F4
               ),
-              child: Center(child: SvgPicture.asset(
-                ImageConstants.arrowBackIcon,width: 10,colorFilter: ColorFilter.mode(AppColors.black, BlendMode.srcIn),)),
+              child: isArabic()==false?
+              Center(
+                  child: SvgPicture.asset(ImageConstants.arrowBackIcon,width: 10,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)):
+              Center(
+                  child: Transform.rotate(
+                    angle: 3.14159,
+                      child: SvgPicture.asset(ImageConstants.arrowBackIcon,width: 10,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)))
             ),
           ),
         ),
-        title: Text('My Favourites',style: AppTextStyles.regular17(context).copyWith(
+
+        title: Text('myFavourites'.tr(context),style: AppTextStyles.regular17(context).copyWith(
             color: AppColors.c181C2E
         ),),
         bottom: TabBar(
@@ -158,7 +168,7 @@ class FavouritesScreen extends StatelessWidget {
               builder: (context, state) {
                 return Tab(
                   child: Text(
-                    'Ongoing (${FavouritesAndHistoryCubit.get(context).favouriteMealsList.length})',
+                    'ongoingMeals'.tr(context)+ ' (${FavouritesAndHistoryCubit.get(context).favouriteMealsList.length})',
                   ),
                 );
               },
@@ -167,7 +177,7 @@ class FavouritesScreen extends StatelessWidget {
               builder: (context, state) {
                 return Tab(
                   child: Text(
-                    'History (${FavouritesAndHistoryCubit.get(context).historyMealsList.length})',
+                    'historyMeals'.tr(context)+ ' (${FavouritesAndHistoryCubit.get(context).historyMealsList.length})',
                   ),
                 );
               },

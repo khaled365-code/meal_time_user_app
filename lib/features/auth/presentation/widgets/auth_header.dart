@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
+import '../../../../core/commons/commons.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/space_widget.dart';
 
@@ -37,14 +38,17 @@ final BuildContext? incomingContext;
             ],
           ),
         ),
+        isArabic()==false?
         Align(
            alignment: AlignmentDirectional.topStart,
             child: Transform.rotate(
               angle: -.1,
-                child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,))),
+                child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,))):SizedBox.shrink(),
+         isArabic()==false?
          Align(
-           alignment: AlignmentDirectional.topEnd,
-            child: Image.asset(ImageConstants.loginOtherElipsisImage,color:hasBackButton==false?Colors.grey.withOpacity(.2):AppColors.cFF7622.withOpacity(.2),)),
+             alignment: AlignmentDirectional.topEnd,
+            child:
+            Image.asset(ImageConstants.loginOtherElipsisImage,color:hasBackButton==false?Colors.grey.withOpacity(.2):AppColors.cFF7622.withOpacity(.2),)):SizedBox.shrink(),
 
         hasBackButton==true?
         PositionedDirectional(
@@ -62,10 +66,17 @@ final BuildContext? incomingContext;
               shape: BoxShape.circle,
               color: AppColors.white,
             ),
-              child: Center(
+              child: isArabic()==false?
+              Center(
                 child: SvgPicture.asset(
-                    width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),),
-                      ),
+                    width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),):
+              Transform.rotate(
+                angle: 3.14159,
+                child: Center(
+                  child: SvgPicture.asset(
+                      width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),),
+              )
+            ),
           ),
         ):
         SizedBox.shrink()

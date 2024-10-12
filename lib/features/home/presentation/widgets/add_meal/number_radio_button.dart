@@ -18,7 +18,7 @@ class NumberRadioButton extends StatelessWidget {
         AddMealCubit.get(context).changeNumberRadioValue();
       },
       child: RadioButtonWithTextWidget(
-        text: 'Number',
+        text: 'number',
         containerIsSelected: AddMealCubit.get(context).numberRadioIsSelected,
       ),
     );

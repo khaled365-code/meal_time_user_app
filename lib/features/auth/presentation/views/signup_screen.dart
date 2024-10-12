@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import 'package:new_meal_time_app/core/utils/app_assets.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/services/internet_connection_service.dart';
@@ -23,7 +26,7 @@ import '../widgets/signup/name_field.dart';
 import '../widgets/signup/password_field.dart';
 import '../widgets/signup/phone_field.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_styles.dart';
+
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -40,8 +43,8 @@ class SignupScreen extends StatelessWidget {
             children: [
               AuthHeaderWidget(
                 hasBackButton: true,
-                title: 'Sign Up',
-                subTitle: 'Please sign up to get started',
+                title: 'signUp'.tr(context),
+                subTitle: 'signUpStarted'.tr(context),
               ),
               Align(
                 alignment: AlignmentDirectional.bottomCenter,
@@ -142,7 +145,7 @@ class SignupScreen extends StatelessWidget {
                                   Padding(
                                     padding: EdgeInsetsDirectional.only(end: 24.w),
                                     child: SharedButton(
-                                      btnText: 'Sign Up',
+                                      btnText: 'signUp'.tr(context),
                                       onPressed: ()
                                       {
                                         performRegistrationProcess(SignupCubit.get(context), context);
@@ -153,8 +156,8 @@ class SignupScreen extends StatelessWidget {
                                             
                                   SpaceWidget(height: 24),
                                   OptionsForAccountWidget(
-                                    title1: 'Already have an account?',
-                                    title2: ' sign in',
+                                    title1: 'alreadyHaveAccount'.tr(context),
+                                    title2: 'signIn'.tr(context),
                                     onActionTapped: () {
                                       Navigator.pop(context);
                                     },
@@ -180,20 +183,30 @@ class SignupScreen extends StatelessWidget {
   void handleSignUpListener(SignupState state, BuildContext context) {
     if (state is SignUpSuccessState)
     {
-      buildScaffoldMessenger(context: context, msg: state.message);
-      buildScaffoldMessenger(context: context, msg: 'sign in to enter your account');
+      buildScaffoldMessenger(
+        iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+          context: context,
+          msg: state.message);
+      buildScaffoldMessenger(
+          context: context,
+          msg: 'signInToEnterAccount'.tr(context));
       navigate(context: context, route: Routes.loginScreen);
     }
     if (state is SignUpFailureState)
     {
       if (state.theError.error != null)
       {
-        buildScaffoldMessenger(context: context, msg: state.theError.error!.toString().substring(
+        buildScaffoldMessenger(
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
+            msg: state.theError.error!.toString().substring(
                 1, state.theError.error!.toString().length - 1));
       }
       else {
         buildScaffoldMessenger(
-            context: context, msg: state.theError.errorMessage!);
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
+            msg: state.theError.errorMessage!);
       }
     }
   }
@@ -207,7 +220,10 @@ class SignupScreen extends StatelessWidget {
         {
           if (signupCubit.healthCertificateImage == null)
           {
-            buildScaffoldMessenger(context: context, msg: 'Please upload image of your certificate to register as chef with us');
+            buildScaffoldMessenger(
+                iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+                context: context,
+                msg: 'pleaseUploadCertificate'.tr(context));
           }
           else {
             SignupCubit.get(context).signupFormKey.currentState!.save();
@@ -229,7 +245,7 @@ class SignupScreen extends StatelessWidget {
       }
     else
       {
-        buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+        buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
 
       }
 

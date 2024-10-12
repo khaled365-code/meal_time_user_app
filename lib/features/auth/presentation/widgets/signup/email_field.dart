@@ -3,6 +3,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -16,18 +18,19 @@ class EmailField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Email',
+      title: 'email',
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
         child: CustomOutlineTextField(
+          maxLines: 1,
           validator: (value) {
             if (value!.isEmpty) {
-              return 'You must enter your email';
+              return 'mustEnterEmail'.tr(context);
             }
             if(EmailValidator.validate(value)==false)
             {
-              return 'invalid email address';
+              return 'invalidEmail'.tr(context);
             }
             else
             {

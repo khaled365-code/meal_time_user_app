@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -17,10 +19,10 @@ class UpdatePriceField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'New Price',
+        title: 'newPrice',
         childWidget: CustomOutlineTextField(
           controller: updateMealCubit.updateMealPriceController,
-          hintText: 'write new meal price here',
+          hintText: 'writeNewMealPrice'.tr(context),
           inputFormatters:
           [
            FilteringTextInputFormatter.digitsOnly,

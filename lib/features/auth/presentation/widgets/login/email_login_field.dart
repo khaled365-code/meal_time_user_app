@@ -3,8 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
@@ -19,7 +19,7 @@ class EmailLoginField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Email',
+      title: 'email',
       childWidget: Padding(
         padding:  EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(
@@ -27,7 +27,7 @@ class EmailLoginField extends StatelessWidget {
           {
             if(value!.isEmpty)
             {
-              return 'You must enter your email';
+              return 'youMustEmail'.tr(context);
             }
             else
             {
@@ -52,7 +52,7 @@ class EmailLoginField extends StatelessWidget {
             }
             else
             {
-              buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+              buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
             }
           },
           controller: LoginCubit.get(context).emailController,

@@ -9,12 +9,14 @@ class AppLocalization
 
   Locale locale;
 
-  static final Map<String, Map<String, String>> _localizedValues = {
+  static final Map<String, Map<String, String>> _localizedValues =
+  {
     'ar': arEg,
     'en': enUs,
   };
 
-  static AppLocalization of(BuildContext context) {
+  static AppLocalization of(BuildContext context)
+  {
     return Localizations.of<AppLocalization>(context, AppLocalization)!;
   }
 
@@ -29,7 +31,8 @@ class AppLocalization
       _localizedValues[locale.languageCode]![text] ?? text;
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
+class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization>
+{
   const AppLocalizationDelegate();
 
   @override
@@ -45,7 +48,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
   bool shouldReload(AppLocalizationDelegate old) => false;
 }
 
-extension LocalizationExtension on String {
+extension LocalizationExtension on String
+{
   String tr(BuildContext context) =>
       AppLocalization.of(context).getString(this);
 }

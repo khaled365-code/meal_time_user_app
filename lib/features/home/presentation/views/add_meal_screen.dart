@@ -1,3 +1,5 @@
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +45,7 @@ class AddMealScreen extends StatelessWidget {
                     SliverFillRemaining(
                       hasScrollBody: false,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.only(
-                            start: 24.w, end: 24.w),
+                        padding: EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
                         child: BlocBuilder<AddMealCubit,AddMealState>(
                         builder: (context, state) {
                         return Form(
@@ -53,7 +54,7 @@ class AddMealScreen extends StatelessWidget {
                           child: Column(
                              crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
-                               SpaceWidget(height: 24,),
+                               SpaceWidget(height: 32,),
                                GestureDetector(
                                  onTap: () {
                                    Navigator.pop(context);
@@ -65,9 +66,17 @@ class AddMealScreen extends StatelessWidget {
                                        shape: BoxShape.circle,
                                        color: AppColors.cECF0F4
                                    ),
-                                   child: Center(
+                                   child: isArabic()==false?
+                                   Center(
                                      child: SvgPicture.asset(
                                          width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                                   ):
+                                   Center(
+                                     child: Transform.rotate(
+                                       angle: 3.14159,
+                                       child: SvgPicture.asset(
+                                           width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                                     ),
                                    ),
                                  ),
                                ),
@@ -121,7 +130,7 @@ class AddMealScreen extends StatelessWidget {
                                  child: SharedLoadingIndicator(),
                                ):
                                SharedButton(
-                                 btnText: 'Add Meal',
+                                 btnText: 'addMeal'.tr(context),
                                  btnTextStyle: AppTextStyles.bold16(context).copyWith(
                                      color: AppColors.white
                                  ),
@@ -153,7 +162,7 @@ class AddMealScreen extends StatelessWidget {
           {
             showToast(
                 context: context,
-                msg: 'You must provide image for meal !',
+                msg: 'youProvideImageMeal'.tr(context),
                 toastStates: ToastStates.error,
                 gravity: ToastGravity.CENTER);
           }
@@ -189,8 +198,8 @@ class AddMealScreen extends StatelessWidget {
                 id: 40,
                 image: ImageConstants.newMealAlarmImage,
                 payload: AddMealCubit.get(context).mealImage?.path,
-                title: '${AddMealCubit.get(context).mealNameController.text+' Meal Added Successfully !'}',
-                body: 'Thank you for submitting ${AddMealCubit.get(context).mealNameController.text} Meal It is now pending approval by the admin. You will see it here once approved.',
+                title: '${AddMealCubit.get(context).mealNameController.text+'mealAddedSuccessfully'.tr(context)}',
+                body: 'ThankSubmitting'.tr(context)+ ' ${AddMealCubit.get(context).mealNameController.text}'+ 'mealPending'.tr(context),
               );
               LocalNotificationsService.showBasicNotification(
                   localNotificationsModel: localNotification);
@@ -206,13 +215,15 @@ class AddMealScreen extends StatelessWidget {
 
             if(state.errorModel.error!=null)
             {
-               buildScaffoldMessenger(context: context,
+               buildScaffoldMessenger(
+                   context: context,
                    msg: state.errorModel.error!.toString().substring(1,state.errorModel.error!.toString().length-1),
                    iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,));
             }
             else
             {
-                 buildScaffoldMessenger(context: context,
+                 buildScaffoldMessenger(
+                     context: context,
                      msg: state.errorModel.errorMessage!,
                      iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,)
                  );

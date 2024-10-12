@@ -19,7 +19,7 @@ class QuantityRadioButton extends StatelessWidget {
         AddMealCubit.get(context).changeQuantityRadioValue();
       },
       child: RadioButtonWithTextWidget(
-        text: 'Quantity',
+        text: 'quantity',
         containerIsSelected: AddMealCubit.get(context).quantityRadioIsSelected,
       ),
     );

@@ -1,5 +1,8 @@
 
 
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import 'package:new_meal_time_app/core/localization/localization_cubit/localization_cubit.dart';
+
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -40,7 +43,7 @@ class CarouselContainerItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(carouselSliderModel.textTitle,style: AppTextStyles.bold16(context).copyWith(color:
+                  Text(carouselSliderModel.textTitle.tr(context),style: AppTextStyles.bold16(context).copyWith(color:
                   AppColors.white),),
                   SpaceWidget(height: 20,),
                   GestureDetector(
@@ -64,7 +67,7 @@ class CarouselContainerItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.r),
                         shape: BoxShape.rectangle
                       ),
-                      child: Center(child: Text(carouselSliderModel.btnText,style: AppTextStyles.bold14(context).copyWith(color: AppColors.primaryColor),)),
+                      child: Center(child: Text(carouselSliderModel.btnText.tr(context),style: AppTextStyles.bold14(context).copyWith(color: AppColors.primaryColor),)),
                     ),
                   )
                 ],

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
@@ -25,13 +26,18 @@ class WelcomeTextWidget extends StatelessWidget {
             text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Hey ${CacheHelper().getData(
-                        key: ApiKeys.name)},',
+                    text: 'hey'.tr(context),
                     style: AppTextStyles.regular16(context)
                         .copyWith(color: AppColors.c1E1D1D),
                   ),
                   TextSpan(
-                    text: ' ${getCurrentGreetingTime()}!',
+                    text: ' ${CacheHelper().getData(
+                        key: ApiKeys.name)}' ,
+                    style: AppTextStyles.regular16(context)
+                        .copyWith(color: AppColors.c1E1D1D),
+                  ),
+                  TextSpan(
+                    text: '${getCurrentGreetingTime(context)} !',
                     style: AppTextStyles.bold16(context).copyWith(
                         color: AppColors.c1E1D1D),
                   )

@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -16,7 +17,7 @@ class DescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Description',
+      title: 'description',
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
@@ -24,11 +25,11 @@ class DescriptionField extends StatelessWidget {
           validator: (value) {
             if (value!.isEmpty)
             {
-              return 'You must enter your brand description';
+              return 'mustEnterDescription'.tr(context);
             }
             if(value.length < 20)
             {
-              return 'description length must be at least 20 characters long';
+              return 'descriptionLess20'.tr(context);
             }
             else
             {
@@ -37,7 +38,8 @@ class DescriptionField extends StatelessWidget {
           },
           controller: SignupCubit.get(context).descriptionController,
           hintText: 'example: fast food brand',
-          keyboardType: TextInputType.text,
+          keyboardType: TextInputType.multiline,
+          textInputAction: TextInputAction.newline,
         ),
       ),
     );

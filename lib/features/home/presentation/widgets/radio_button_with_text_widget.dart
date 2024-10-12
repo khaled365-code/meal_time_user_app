@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../core/widgets/space_widget.dart';
@@ -37,7 +39,7 @@ class RadioButtonWithTextWidget extends StatelessWidget {
           ),
         ),
         SpaceWidget(width: 11,),
-        Text(text,style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E),)
+        Text(text.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E),)
       ],
     );
   }

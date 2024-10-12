@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
@@ -17,7 +18,7 @@ class LoginPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'Password',
+      title: 'password',
       childWidget:  Padding(
         padding:  EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(
@@ -27,7 +28,7 @@ class LoginPasswordField extends StatelessWidget {
           {
             if(value!.isEmpty)
             {
-              return 'You must enter your password';
+              return 'youMustPassword'.tr(context);
             }
             else
             {
@@ -52,7 +53,7 @@ class LoginPasswordField extends StatelessWidget {
             }
             else
             {
-            buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
+            buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,));
             }
           },
           controller: LoginCubit.get(context).passwordController,

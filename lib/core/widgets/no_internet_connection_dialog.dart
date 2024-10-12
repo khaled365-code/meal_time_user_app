@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:new_meal_time_app/core/utils/app_colors.dart';
 import 'package:new_meal_time_app/core/utils/app_text_styles.dart';
 import 'package:new_meal_time_app/core/widgets/space_widget.dart';
@@ -15,7 +17,7 @@ class NoInternetConnectionDialog extends StatelessWidget {
       backgroundColor: AppColors.cF0F0F0,
       contentPadding: EdgeInsetsDirectional.only(start: 3.w,top: 5.h),
 
-      title: Text('No internet Connection',style: AppTextStyles.bold20(context).copyWith(
+      title: Text('noInternetConnection'.tr(context),style: AppTextStyles.bold20(context).copyWith(
         color: AppColors.c181C2E
       ),),
 
@@ -25,7 +27,7 @@ class NoInternetConnectionDialog extends StatelessWidget {
          [
            Padding(
              padding:  EdgeInsets.symmetric(horizontal: 20.w),
-             child: Text('Please check your internet connection and try again later',
+             child: Text('pleaseCheckYourInternet'.tr(context),
              style: AppTextStyles.regular14(context).copyWith(
                color: AppColors.c363636
              ),),
@@ -44,7 +46,7 @@ class NoInternetConnectionDialog extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Center(
-            child: Text('Ok',style: AppTextStyles.bold20(context).copyWith(
+            child: Text('ok'.tr(context),style: AppTextStyles.bold20(context).copyWith(
               color: AppColors.primaryColor
             )),
           ),

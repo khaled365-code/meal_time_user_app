@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/commons/global_models/local_notifications_model.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -44,18 +45,17 @@ class UpdateMealScreen extends StatelessWidget {
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
-                    child: Padding(padding: EdgeInsetsDirectional.only(
-                          start: 24.w, end: 24.w),
+                    child: Padding(padding: EdgeInsetsDirectional.only(start: 24.w, end: 24.w),
                       child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SpaceWidget(height: 24,),
+                        SpaceWidget(height: 32,),
                         UpdateScreenAppBar(),
                         SpaceWidget(height: 24,),
                         BlocBuilder<UpdateMealCubit, UpdateMealState>
                           (builder: (context, state){
                             return AddMealPhotoWidget(
-                            specificUpdateText: 'Update',
+                            specificUpdateText: 'update'.tr(context),
                             onDeletePhotoPressed: ()
                             {
                               UpdateMealCubit.get(context).deleteUpdatedMealImageFun();
@@ -88,7 +88,7 @@ class UpdateMealScreen extends StatelessWidget {
                         BlocBuilder<UpdateMealCubit, UpdateMealState>(
                             builder: (context,state){
                               return NameAndTextFieldWidget(
-                                  title: 'New category',
+                                  title: 'newCategory',
                                   childWidget: Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.cF0F5FA,
@@ -108,7 +108,7 @@ class UpdateMealScreen extends StatelessWidget {
                                                     (e) =>
                                                     DropdownMenuItem(
                                                         value: e,
-                                                        child: Text(e, style: AppTextStyles.regular14(context).copyWith(
+                                                        child: Text(e.tr(context), style: AppTextStyles.regular14(context).copyWith(
                                                           color: AppColors.cA0A5BA
                                                       ),)),
                                               ).toList(),
@@ -157,7 +157,7 @@ class UpdateMealScreen extends StatelessWidget {
                                 }
                               else
                                 {
-                                  return SharedButton(btnText: 'Update This Meal',
+                                  return SharedButton(btnText: 'updateThisMeal'.tr(context),
                                     btnTextStyle: AppTextStyles.bold16(context)
                                         .copyWith(
                                         color: AppColors.white
@@ -189,8 +189,8 @@ class UpdateMealScreen extends StatelessWidget {
         id: 55,
         image: ImageConstants.newMealAlarmImage,
         payload: UpdateMealCubit.get(context).updatedMealImage?.path??imagePath,
-        title: '${receivedMeal.name} Meal Updated Successfully ${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to '+ UpdateMealCubit.get(context).updateMealNameController.text} !',
-        body: '${receivedMeal.name} details have been successfully modified. Feel free to review the changes at any time.'
+        title: '${receivedMeal.name}'+ 'mealUpdatedSuccessfully'.tr(context) + '${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to'.tr(context)+ UpdateMealCubit.get(context).updateMealNameController.text}',
+        body: 'detailsModified'.tr(context)
       );
       LocalNotificationsService.showBasicNotification(localNotificationsModel: localNotificationsModel);
      await NotificationsCubit.get(context).saveLocalNotificationsFun(localNotification: localNotificationsModel);
@@ -229,7 +229,7 @@ class UpdateMealScreen extends StatelessWidget {
         {
           showToast(
             context: context,
-              msg: 'Nothing to update',
+              msg: 'nothingToUpdate'.tr(context),
               toastStates: ToastStates.error,
               gravity: ToastGravity.CENTER);
         }

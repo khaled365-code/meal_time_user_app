@@ -8,6 +8,8 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -67,11 +69,11 @@ class AddMealPhotoWidget extends StatelessWidget {
                 children: [
                   Text(
                     specificUpdateText==null?
-                      'Click to Upload':'Click to ${specificUpdateText}',
+                      'clickToUpload'.tr(context):'clickTo'.tr(context)+ ' ${specificUpdateText}',
                       style: AppTextStyles.regular16(context).copyWith(color: Color(0xff32343E))
                   ),
                   Text(
-                    ' Meal Image',
+                    'mealImage'.tr(context),
                     style: AppTextStyles.regular16(context).copyWith(color: AppColors.primaryColor),
                   ),
                 ],

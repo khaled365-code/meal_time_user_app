@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../../core/widgets/space_widget.dart';
 import '../../data/models/onboarding_data_model.dart';
@@ -25,9 +27,9 @@ class PageViewContent extends StatelessWidget {
           ),
         ),
         Flexible(child: SpaceWidget(height: 63,)),
-        Text(onboardingDataModel.title,style: AppTextStyles.extraBold24(context).copyWith(color: Color(0xff32343E)),),
+        Text(onboardingDataModel.title.tr(context),style: AppTextStyles.extraBold24(context).copyWith(color: Color(0xff32343E)),),
         Flexible(child: SpaceWidget(height: 18,)),
-        Text(onboardingDataModel.subtitle,style: AppTextStyles.regular16(context).copyWith(color: Color(0xff646982)),)
+        Text(onboardingDataModel.subtitle.tr(context),style: AppTextStyles.regular16(context).copyWith(color: Color(0xff646982)),)
 
 
       ],
