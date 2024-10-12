@@ -211,6 +211,21 @@ final Map<String, String> arEg =
 
 
 
+  'profile':'الملف الشخصي',
+  'loveFastFood':'أنا أحب الطعام اللذيذ',
+  'personalInfo': 'المعلومات الشخصية',
+  'editProfile': 'تعديل الملف الشخصي',
+  'getYourMeals': 'رؤيه وجباتك الشخصيه',
+  'notifications': 'الإشعارات',
+  'faqs': 'الأسئلة الشائعة',
+  'settings': 'الإعدادات',
+  'deleteAccount': 'حذف الحساب',
+  'logout': 'تسجيل الخروج',
+
+
+
+
+
 
 
 

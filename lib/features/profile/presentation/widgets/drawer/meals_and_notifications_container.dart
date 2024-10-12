@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/utils/app_assets.dart';
@@ -43,8 +44,13 @@ class MealsAndNotificationsContainer extends StatelessWidget {
                 child: SvgPicture.asset(ImageConstants.mealsProfileIcon,colorFilter: ColorFilter.mode(AppColors.c369BFF, BlendMode.srcIn),),
               ),
             ),
-            title: Text('Get Your Meals',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('getYourMeals'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+            isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
           SpaceWidget(height: 16,),
           ListTile(
@@ -67,8 +73,13 @@ class MealsAndNotificationsContainer extends StatelessWidget {
                 child: SvgPicture.asset(ImageConstants.notificationsProfileIcon,colorFilter: ColorFilter.mode(AppColors.cB33DFB, BlendMode.srcIn),),
               ),
             ),
-            title: Text('Notifications',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('notifications'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+            isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
 
 

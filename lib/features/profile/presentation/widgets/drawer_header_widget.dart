@@ -4,6 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../core/commons/global_cubits/internet_checking_cubit.dart';
 import '../../../../core/database/api/api_keys.dart';
@@ -71,7 +73,7 @@ class DrawerHeaderWidget extends StatelessWidget {
                 style: AppTextStyles.bold20(context).copyWith(
                     color: AppColors.c32343E),),
               SpaceWidget(height: 8,),
-              Text('I love fast food',
+              Text('loveFastFood'.tr(context),
                 style: AppTextStyles.regular14(context).copyWith(
                     color: AppColors.cA0A5BA),),
             ],

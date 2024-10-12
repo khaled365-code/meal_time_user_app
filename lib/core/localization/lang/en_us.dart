@@ -208,6 +208,18 @@ final Map<String, String> enUs =
   'getStarted':'Get Started',
 
 
+  'profile':'Profile',
+  'personalInfo':'Personal Info',
+  'editProfile':'Edit Profile',
+  'getYourMeals':'Get Your Meals',
+  'notifications':'Notifications',
+  'faqs':'FAQs',
+  'settings':'Settings',
+  'deleteAccount':'Delete Account',
+  'logout':'Log Out',
+
+
+
 
 
 

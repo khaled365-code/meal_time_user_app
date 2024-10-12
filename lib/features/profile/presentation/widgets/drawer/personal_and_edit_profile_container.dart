@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/commons/global_cubits/internet_checking_cubit.dart';
 import '../../../../../core/routes/routes.dart';
@@ -40,8 +41,13 @@ class PersonalAndEditProfileBodyContainer extends StatelessWidget {
               ),
               child: Center(child: SvgPicture.asset(ImageConstants.personProfileIcon),),
             ),
-            title: Text('Personal Info',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('personalInfo'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+                isArabic() == false?
+                SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+                Transform.rotate(
+                 angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
           SpaceWidget(height: 16,),
           ListTile(
@@ -64,8 +70,13 @@ class PersonalAndEditProfileBodyContainer extends StatelessWidget {
                   colorFilter: ColorFilter.mode(AppColors.c413DFB, BlendMode.srcIn),),
               ),
             ),
-            title: Text('Edit Profile',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('editProfile'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+            isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
 
         ],

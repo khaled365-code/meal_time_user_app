@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/utils/app_assets.dart';
@@ -42,8 +43,13 @@ class SettingsAndFaqContainer extends StatelessWidget {
                 child: SvgPicture.asset(ImageConstants.faqIcon,),
               ),
             ),
-            title: Text('FAQs',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('faqs'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+            isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
           SpaceWidget(height: 16,),
           ListTile(
@@ -64,8 +70,13 @@ class SettingsAndFaqContainer extends StatelessWidget {
                 child: SvgPicture.asset(ImageConstants.settingsIcon,),
               ),
             ),
-            title: Text('Settings',style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            title: Text('settings'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
+            trailing:
+            isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
 
         ],
