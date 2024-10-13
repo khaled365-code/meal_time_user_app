@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/injection/injector.dart';
 import '../../../../../core/utils/app_assets.dart';
@@ -81,7 +82,7 @@ class ChangePasswordBottomSheet extends StatelessWidget {
                                           ChangeConfirmPasswordField(),
                                           SpaceWidget(height: 10,),
                                           Text(
-                                            'Your password must be at least 6 characters long',
+                                            'yourPasswordLong'.tr(context),
                                             style: AppTextStyles.regular14(context).copyWith(
                                                 color: AppColors.cA0A5BA
                                             ),),

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
@@ -65,7 +66,7 @@ class LogoutBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Lottie.asset(ImageConstants.logouAccountLottie2),
-                  Text('Do you want to logout?',
+                  Text('wantLogout?'.tr(context),
                     style: AppTextStyles.bold20(context)
                         .copyWith(color: AppColors.c181C2E),),
                   SpaceWidget(height: 10,),
@@ -73,7 +74,7 @@ class LogoutBottomSheet extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: FittedBox(
                       child: Text(
-                        'You can login with the same email address later',
+                        'canLoginWithSameEmail'.tr(context),
                         style: AppTextStyles.bold18(context).copyWith(
                             color: AppColors.cA4ACAD
                         ),),
@@ -100,7 +101,7 @@ class LogoutBottomSheet extends StatelessWidget {
                                   showDialog(context: context, builder: (context) => NoInternetConnectionDialog(),);
                                 }
                             },
-                            btnText: 'Confirm',
+                            btnText: 'confirm'.tr(context),
                             btnTextStyle: AppTextStyles.bold16(context).copyWith(
                                 color: AppColors.white),);
                         }
@@ -113,7 +114,7 @@ class LogoutBottomSheet extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: Text(
-                        'Cancel', style: AppTextStyles.bold16(context).copyWith(
+                        'cancel'.tr(context), style: AppTextStyles.bold16(context).copyWith(
                         color: AppColors.primaryColor)),
                   ),
                   Spacer()

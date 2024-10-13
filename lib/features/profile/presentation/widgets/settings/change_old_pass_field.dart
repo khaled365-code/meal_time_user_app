@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
@@ -17,7 +18,7 @@ class ChangeOldPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Old password',
+        title: 'oldPassword'.tr(context),
         childWidget: CustomOutlineTextField(
             maxLines: 1,
             keyboardType: TextInputType.text,
@@ -36,7 +37,7 @@ class ChangeOldPasswordField extends StatelessWidget {
             {
               if(value!.isEmpty)
               {
-                return 'please enter your old password';
+                return 'pleaseEnterOldPassword'.tr(context);
               }
               else
               {

@@ -313,6 +313,25 @@ final Map<String, String> arEg =
 
 
 
+  'oldPassword': 'كلمة المرور القديمة',
+  'newPasswordChangePassword': 'كلمة المرور الجديدة',
+  'confirmPasswordChangePassword': 'تأكيد كلمة المرور',
+  'yourPasswordLong': 'يجب أن تكون كلمة المرور الخاصة بك مكونة من 6 أحرف على الأقل',
+  'pleaseEnterOldPassword': 'يرجى إدخال كلمة المرور القديمة',
+  'pleaseEnterYourNewPassword': 'يرجى إدخال كلمة المرور الجديدة',
+  'pleaseConfirmYourNewPassword': 'يرجى تأكيد كلمة المرور الجديدة',
+  'passwordMustLeast6': 'يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل',
+  'passwordsDoNotMatch': 'كلمات المرور الجديدة غير متطابقة',
+
+
+  'sureDeleteAccount?': 'هل أنت متأكد أنك تريد حذف حسابك ؟',
+  'warningDeleteAccount': 'يرجى العلم أنه بمجرد حذف حسابك، ستفقد جميع البيانات داخل التطبيق بشكل دائم.',
+  'wantLogout?': 'هل تريد تسجيل الخروج؟',
+  'canLoginWithSameEmail': 'يمكنك تسجيل الدخول باستخدام نفس البريد الإلكتروني لاحقًا',
+  'confirm': 'تأكيد',
+
+
+
 
 
 

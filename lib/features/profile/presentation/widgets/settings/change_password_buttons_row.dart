@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
 import '../../../../../core/widgets/no_internet_connection_dialog.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -35,7 +36,7 @@ class ChangePasswordButtonsRow extends StatelessWidget {
               },
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                  child: Text('Cancel',
+                  child: Text('cancel'.tr(context),
                 style: AppTextStyles.bold16(context).copyWith(
                     color: AppColors.c181C2E),))),
         ),
@@ -76,7 +77,7 @@ class ChangePasswordButtonsRow extends StatelessWidget {
               },
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                  child: Text('Change Password',
+                  child: Text('changePassword'.tr(context),
                 style: AppTextStyles.bold16(context).copyWith(
                     color: AppColors.white),))),
         )

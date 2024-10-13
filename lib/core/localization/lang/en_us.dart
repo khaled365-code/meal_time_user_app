@@ -305,6 +305,27 @@ final Map<String, String> enUs =
 
 
 
+  'oldPassword':'Old password',
+  'newPasswordChangePassword':'New password',
+  'confirmPasswordChangePassword':'Confirm password',
+  'yourPasswordLong':'Your password must be at least 6 characters long',
+  'pleaseEnterOldPassword':'please enter your old password',
+  'pleaseEnterYourNewPassword':'please enter your new password',
+  'pleaseConfirmYourNewPassword':'please confirm your new password',
+  'passwordMustLeast6':'password must be at least 6 characters long',
+  'passwordsDoNotMatch':'passwords do not match',
+
+
+  'sureDeleteAccount?':'Are you sure you want to delete your account ?',
+  'warningDeleteAccount':'Please be aware that once you delete your account, you will permanently lose\nall data within the app.',
+  'wantLogout?':'Do you want to logout?',
+  'canLoginWithSameEmail':'You can login with the same email address later',
+  'confirm':'Confirm',
+
+
+
+
+
 
 
 

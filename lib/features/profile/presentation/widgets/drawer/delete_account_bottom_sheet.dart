@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/commons/global_models/local_notifications_model.dart';
 import '../../../../../core/database/api/api_keys.dart';
@@ -75,12 +76,12 @@ class DeleteAccountBottomSheet extends StatelessWidget {
                   child: Image.asset(ImageConstants.trashSuitableGif)),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Text('Are you sure you want to delete your account ?',style: AppTextStyles.bold18(context).copyWith(color: AppColors.c32343E,),),
+                child: Text('sureDeleteAccount?'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.c32343E,),),
               ),
               SpaceWidget(height: 5,),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Text('Please be aware that once you delete your account, you will permanently lose\nall data within the app.',style: AppTextStyles.regular15(context).copyWith(color: AppColors.cA4ACAD,),),
+                child: Text('warningDeleteAccount'.tr(context),style: AppTextStyles.regular15(context).copyWith(color: AppColors.cA4ACAD,),),
               ),
               Spacer(),
               BlocBuilder<DeleteAccountCubit,DeleteAccountState>(
@@ -110,7 +111,7 @@ class DeleteAccountBottomSheet extends StatelessWidget {
                               showDialog(context: context, builder: (context) => NoInternetConnectionDialog(),);
                             }
                         },
-                        btnText: 'Delete Account',);
+                        btnText: 'deleteAccount'.tr(context),);
                     }
                 },
               ),

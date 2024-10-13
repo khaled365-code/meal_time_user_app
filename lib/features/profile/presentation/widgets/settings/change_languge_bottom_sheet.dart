@@ -47,7 +47,17 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                 GestureDetector(
                    onTap: () async
                     {
-                      LocalizationCubit.get(context).changeLanguageToArabic();
+                      if(isArabic()==true)
+                        {
+                          LocalizationCubit.get(context).changeLanguageToEnglish();
+                          Navigator.pop(context);
+                        }
+                      else
+                        {
+                        LocalizationCubit.get(context).changeLanguageToArabic();
+                        Navigator.pop(context);
+                        }
+
                     },
                     child: Text(
                       isArabic()==false?
@@ -60,7 +70,16 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                 GestureDetector(
                     onTap: () async
                     {
-                      LocalizationCubit.get(context).changeLanguageToEnglish();
+                      if(isArabic()==true)
+                         {
+                          LocalizationCubit.get(context).changeLanguageToArabic();
+                          Navigator.pop(context);
+                         }
+                      else
+                        {
+                          LocalizationCubit.get(context).changeLanguageToEnglish();
+                          Navigator.pop(context);
+                        }
                     },
                     child: Text(
                       isArabic()==false?

@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -16,7 +17,7 @@ class ChangeNewPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'New password',
+        title: 'newPasswordChangePassword'.tr(context),
         childWidget: CustomOutlineTextField(
             maxLines: 1,
             keyboardType: TextInputType.text,
@@ -35,15 +36,15 @@ class ChangeNewPasswordField extends StatelessWidget {
             {
               if(value!.isEmpty)
               {
-                return 'please enter your new password';
+                return 'pleaseEnterYourNewPassword'.tr(context);
               }
               if(value.length<6)
               {
-                return 'password must be at least 6 characters long';
+                return 'passwordMustLeast6'.tr(context);
               }
               if(value!= ChangePasswordCubit.get(context).confirmPasswordController.text)
                 {
-                  return 'passwords do not match';
+                  return 'passwordsDoNotMatch'.tr(context);
                 }
               else
               {
