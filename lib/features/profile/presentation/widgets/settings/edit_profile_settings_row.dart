@@ -4,6 +4,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -46,7 +47,7 @@ class EditProfileRowSettings extends StatelessWidget {
               style: AppTextStyles.bold14(context).copyWith(
                   color: AppColors.c32343E),),
             SpaceWidget(height: 1,),
-            Text('Edit your profile',
+            Text('editYourProfile'.tr(context),
               style: AppTextStyles.regular13(context).copyWith(
                   color: AppColors.cA0A5BA),),
           ],
@@ -66,7 +67,7 @@ class EditProfileRowSettings extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Edit',
+                  'edit'.tr(context),
                   style: AppTextStyles.regular16(context).copyWith(
                       color: AppColors.white
                   ),

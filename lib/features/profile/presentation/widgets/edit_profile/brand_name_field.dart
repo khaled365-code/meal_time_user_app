@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,7 +16,7 @@ class EditProfileBrandNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Brand Name'.toUpperCase(),
+        title: 'brandName'.tr(context).toUpperCase(),
         childWidget: CustomOutlineTextField(
           controller: EditProfileCubit.get(context).brandNameController,
           keyboardType: TextInputType.text,
@@ -23,15 +24,15 @@ class EditProfileBrandNameField extends StatelessWidget {
           validator: (value) {
             if(value!.isEmpty)
               {
-                return 'brand name must not be empty';
+                return 'brandNameMustNotBeEmpty'.tr(context);
               }
             if(value.length<3)
             {
-              return 'brand name length must be at least 3 characters long';
+              return 'brandNameLeast3'.tr(context);
             }
             if(value.length>15)
             {
-              return 'brand name length must be less than or equal to 15 characters long';
+              return 'brandNameLess15'.tr(context);
             }
             else
             {

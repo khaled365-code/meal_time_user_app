@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -20,10 +21,10 @@ class BillReminderListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text('Bill Reminder',style: AppTextStyles.bold15(context).copyWith(
+      title: Text('billReminder'.tr(context),style: AppTextStyles.bold15(context).copyWith(
           color: AppColors.c32343E
       ),),
-      subtitle: Text('Allows to activate bill reminder for you',style: AppTextStyles.regular13(context).copyWith(
+      subtitle: Text('allowActivateBillReminder'.tr(context),style: AppTextStyles.regular13(context).copyWith(
           color: AppColors.cA0A5BA
       ),),
       contentPadding: EdgeInsetsDirectional.zero,

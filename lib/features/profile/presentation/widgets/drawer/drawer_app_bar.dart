@@ -34,13 +34,15 @@ class DrawerAppBar extends StatelessWidget {
             child: isArabic()==false?
             Center(
               child: SvgPicture.asset(
-                  width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                  width: 8,
+                  ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
             ):
             Center(
               child: Transform.rotate(
                 angle: 3.14159,
                 child: SvgPicture.asset(
-                    width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                    width: 8,
+                    ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
               ),
             ),
           ),

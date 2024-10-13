@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import 'change_languge_bottom_sheet.dart';
@@ -20,10 +22,10 @@ class LanguageListTile extends StatelessWidget {
           context: context,
           builder: (context) => ChangeLanguageBottomSheet(),);
       },
-      title: Text('Language',style: AppTextStyles.bold15(context).copyWith(
+      title: Text('language'.tr(context),style: AppTextStyles.bold15(context).copyWith(
           color: AppColors.c32343E
       ),),
-      subtitle: Text('Allows to switch between english\nand arabic as you prefer',style: AppTextStyles.regular13(context).copyWith(
+      subtitle: Text('allowsLanguageSwitch'.tr(context),style: AppTextStyles.regular13(context).copyWith(
           color: AppColors.cA0A5BA
       ),),
       contentPadding: EdgeInsetsDirectional.zero,

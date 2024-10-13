@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/database/api/api_keys.dart';
 import '../../../../core/database/cache/cache_helper.dart';
@@ -96,7 +97,7 @@ class EditProfileScreen extends StatelessWidget {
                           Center(
                             child: SharedLoadingIndicator(),
                           ):SharedButton(
-                            btnText: 'SAVE',
+                            btnText: 'save'.tr(context).toUpperCase(),
                             btnTextStyle: AppTextStyles.bold16(context)
                                 .copyWith(color: AppColors.white),
                             onPressed: () async
@@ -142,9 +143,12 @@ class EditProfileScreen extends StatelessWidget {
   {
      if(state is EditProfileSuccessState)
       {
-        buildScaffoldMessenger(context: context, msg: 'Profile updated successfully',iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon));
+        buildScaffoldMessenger(
+            context: context,
+            msg: 'profileUpdatedSuccessfully'.tr(context),
+            iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon));
         await GetChefDataCubit.get(context).getChefDataFun(chefIId: CacheHelper().getData(key: ApiKeys.id));
-        Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => true,);
+        Navigator.pop(context);
 
       }
     if(state is EditProfileFailureState)

@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -23,7 +25,7 @@ class FaqSearchField extends StatelessWidget {
       ),
       contentPadding: EdgeInsetsDirectional.only(top: 9.h),
       fillColor: AppColors.cF5F5F5,
-      hintText: 'Enter your keyword',
+      hintText: 'enterYourKeyword'.tr(context),
       hintStyle: AppTextStyles.regular14(context).copyWith(color: AppColors.c757575),
       borderRadius: BorderRadius.circular(8.r),
       onChanged: (value)

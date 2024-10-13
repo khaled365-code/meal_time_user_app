@@ -219,6 +219,95 @@ final Map<String, String> enUs =
   'logout':'Log Out',
 
 
+  'edit':'Edit',
+  'brandDesc':'Brand Description',
+  'fullName':'FULL NAME',
+  'address':'Address',
+  'clickToSee':'click to see it',
+  'phoneNumber':'Phone Number',
+  'certification':'Certification!',
+  'enjoyOurService':'enjoy our service!',
+  'hereYourHealthCertificate':'Here is your health certificate',
+
+  'editYourProfile':'Edit Your Profile',
+  'nameMustNotBeEmpty':'name must not be empty',
+  'phoneMustNotBeEmpty':'phone must not be empty',
+  'brandNameMustNotBeEmpty':'brand name must not be empty',
+  'minChargeMustNotBeEmpty':'min charge must not be empty',
+  'descriptionMustNotBeEmpty':'description must not be empty',
+  'save':'save',
+  'found':'Found',
+  'meals':'meals',
+  'clearAll':'Clear all',
+  'delete':'Delete',
+  'profileUpdatedSuccessfully':'Profile updated successfully',
+
+  'howCanWeHelp':'How can we help you?',
+  'enterYourKeyword':'Enter your keyword',
+  'questionsAbout':'Questions about',
+  'howToInvest':'How to Invest',
+  'gettingStarted':'Getting Started',
+  'topQuestions':'Top Questions',
+  'viewAll':'View All',
+  'noResultFound':'No result found',
+
+  'canIAddMeals':'Can I add my own meals to the app?',
+  'whatShouldIfForgetPassword':'What should I do if I forget password?',
+  'howCanUpdateMeal':'How can I update a meal I’ve added?',
+  'canChangeLanguagePreferences':'Can I change language preferences?',
+  'whatTypesNotificationsAppOffer':'What types of notifications\ndoes the app offer?',
+  'howCanDeleteAccount':'How can I delete my account?',
+  'canIManageLocationSettings':'Can I manage location settings?',
+  'canIViewMealsByOtherChefs':'Can I view all meals\nadded by other chefs?',
+  'howCanIEditProfilePhoto':'How can I edit my profile photo?',
+  'howDoILogout':'How do I log out of the app?',
+  'whatHappensToMyCachingData':'What happens to my caching data\nwhen I logout of the app?',
+
+  'answer1':'Yes, you can add your own meals to the App. Go to the Meals section, press add button, fill in the details like meal name, description, price, and category, and submit',
+  'answer2':'If you forget your password, click the Forgot Password link on the login page. Enter your registered email, and a code will be sent to your email to reset your password',
+  'answer3':'To update a meal, go to the Meals section, select your own meal you  want to update , and complete the process',
+  'answer4':'Yes, the app supports both Arabic and English. You can switch between these languages in the app settings.',
+  'answer5':'The app provides basic, repeated, and scheduled notifications. You can manage notification settings in the app, including turning notifications on or off.',
+  'answer6':'If you wish to delete your account, go to the Account Settings and choose the Delete Account option. Please note that this action is permanent and cannot be undone. you will lose your account and data',
+  'answer7':'Yes, you can turn location services on or off in the settings menu, giving you control over whether the app accesses your location.',
+  'answer8':'Yes, you can browse through all the meals added by various chefs in the All Meals section. You can filter meals by categories like cuisine, price range, or popularity.',
+  'answer9':'To update your profile photo, go to the Profile section, click on your current photo, and select a new image from your device.',
+  'answer10':'You can log out by going to the drawer menu and selecting the Log Out option. This will securely log you out of your account.',
+  'answer11':'All your data will be saved and accessible only after you log back in. This will ensure that your data is not lost when you log out.',
+
+
+
+  'generalSettings':'General Settings',
+  'generalNotifications':'General Notifications',
+  'allowSendNotifications':'Allows us to send notifications to your device',
+  'billReminder':'Bill Reminder',
+  'allowActivateBillReminder':'Allows to activate bill reminder for you',
+  'appUpdates':'App updates',
+  'allowGetUpdates':'Allows to get all updates and new features',
+
+
+  'accountSettings':'Account Settings',
+  'language':'Language',
+  'allowsLanguageSwitch':'Allows to switch between english\nand arabic as you prefer',
+  'changePassword':'Change Password',
+  'allowsChangePassword':'Allows to change your current password whenever you want',
+
+
+
+  'likeChangeAppLanguage':'Would you like to change app language',
+  'toArabic':'To (Arabic) ?',
+  'toEnglish':'To (English) ?',
+  'changeToArabic':'Change to Arabic (AR)',
+  'changeToEnglish':'Change to English (EN)',
+  'keepEnglish':'Keep English',
+  'keepArabic':'Keep Arabic',
+  'cancel':'Cancel',
+
+
+
+
+
+
 
 
 

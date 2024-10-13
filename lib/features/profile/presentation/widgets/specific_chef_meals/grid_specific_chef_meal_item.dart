@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -55,7 +56,12 @@ class GridSpecificChefMealsItem extends StatelessWidget {
                           )),
                     ),
                     SpaceWidget(height: 18,),
+                    isArabic()==false?
                     Text('\$${meal.price}'.toString(), style: AppTextStyles
+                        .bold17(context).copyWith(
+                        color: AppColors.cFA4A0C
+                    )):
+                    Text('${translateNumbersToArabic(meal.price)}\$', style: AppTextStyles
                         .bold17(context).copyWith(
                         color: AppColors.cFA4A0C
                     )),

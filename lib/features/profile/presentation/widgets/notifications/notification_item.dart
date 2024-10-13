@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/commons/global_models/local_notifications_model.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -58,9 +59,13 @@ class NotificationItem extends StatelessWidget {
                     text: TextSpan(
                   children: [
                     TextSpan(
-                      text: formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true,context: context).toString(),style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)
+                      text: isArabic()==false?
+                      formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true,context: context,).toString():
+                      translateNumbersToArabic(formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true,context: context,isArabic: true).toString()),style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)
                     ),
-                    TextSpan(text: ' at ${formatClock(dateTime: DateTime.parse(notificationModel.notificationTime))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)),
+                    TextSpan(text: isArabic()==false?
+                    ' at'+ ' ${formatClock(dateTime: DateTime.parse(notificationModel.notificationTime),)}':
+                    ' عند ${translateNumbersToArabic(formatClock(dateTime: DateTime.parse(notificationModel.notificationTime),isArabic: true))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)),
                     TextSpan(text: ' ${getAmorPm(DateTime.parse(notificationModel.notificationTime),context)}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,))
                   ]
                 ))

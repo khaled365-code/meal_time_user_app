@@ -1,8 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
-import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:new_meal_time_app/core/utils/app_text_styles.dart';
 import 'package:new_meal_time_app/core/widgets/space_widget.dart';
 
@@ -17,7 +15,7 @@ class NameAndTextFieldWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title.tr(context),style: AppTextStyles.regular13(context).copyWith(color: Color(0xff32343E)),),
+        Text(title,style: AppTextStyles.regular13(context).copyWith(color: Color(0xff32343E)),),
         SpaceWidget(height: 8,),
         childWidget
       ],

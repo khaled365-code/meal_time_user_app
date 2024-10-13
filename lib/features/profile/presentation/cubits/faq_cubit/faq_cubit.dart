@@ -19,17 +19,17 @@ class FaqCubit extends Cubit<FaqState> {
   [
     FamousQuestionsModel(
         icon: ImageConstants.notificationQuestionIcon,
-        questionTitle: 'Getting Started',
+        questionTitle: 'gettingStarted',
         questionColor: AppColors.cE2F2FF),
 
     FamousQuestionsModel(
         icon: ImageConstants.howToInvestIcon,
-        questionTitle: 'How to Invest',
+        questionTitle: 'howToInvest',
         questionColor: AppColors.cEAFFED),
 
     FamousQuestionsModel(
         icon: ImageConstants.notificationQuestionIcon,
-        questionTitle: 'Notifications',
+        questionTitle: 'notifications',
         questionColor: AppColors.cE2F2FF),
     
   ];
@@ -38,49 +38,45 @@ class FaqCubit extends Cubit<FaqState> {
   List<QuestionsAndAnswersModel> originalQuestionsAndAnswersList =
   [
 
-    QuestionsAndAnswersModel(question: 'Can I add my own meals to the app?',
-        answer: 'Yes, you can add your own meals to the App. Go to the Meals section, press add button, fill in the details like meal name, description, price, and category, and submit'),
+    QuestionsAndAnswersModel(question: 'canIAddMeals',
+        answer: 'answer1'),
     QuestionsAndAnswersModel(
-        question: 'What should I do if I forget password?',
-        answer: 'If you forget your password, click the Forgot Password link on the login page. Enter your registered email, and a code will be sent to your email to reset your password'),
+        question: 'whatShouldIfForgetPassword',
+        answer: 'answer2'),
     QuestionsAndAnswersModel(
-        question: 'How can I update a meal I’ve added?',
-        answer: 'To update a meal, go to the Meals section, select your own meal you  want to update , and complete the process'),
+        question: 'howCanUpdateMeal',
+        answer: 'answer3'),
     QuestionsAndAnswersModel(
-        question: 'Can I change language preferences?',
-        answer: 'Yes, the app supports both Arabic and English. You can switch between these languages in the app settings.'),
+        question: 'canChangeLanguagePreferences',
+        answer: 'answer4'),
 
     QuestionsAndAnswersModel(
-        question: 'Does App have a dark mode?',
-        answer: 'Yes, you can enable or disable dark mode by navigating to the settings and toggling the Dark Mode option.'),
+        question: 'whatTypesNotificationsAppOffer',
+        answer: 'answer5'),
 
     QuestionsAndAnswersModel(
-        question: 'What types of notifications\ndoes the app offer?',
-        answer: 'The app provides basic, repeated, and scheduled notifications. You can manage notification settings in the app, including turning notifications on or off.'),
+        question: 'howCanDeleteAccount',
+        answer: 'answer6'),
 
     QuestionsAndAnswersModel(
-        question: 'How can I delete my account?',
-        answer: 'If you wish to delete your account, go to the Account Settings and choose the Delete Account option. Please note that this action is permanent and cannot be undone. you will lose your account and data'),
+        question: 'canIManageLocationSettings',
+        answer: 'answer7'),
 
     QuestionsAndAnswersModel(
-        question: 'Can I manage location settings?',
-        answer: 'Yes, you can turn location services on or off in the settings menu, giving you control over whether the app accesses your location.'),
+        question: 'canIViewMealsByOtherChefs',
+        answer: 'answer8'),
 
     QuestionsAndAnswersModel(
-        question: 'Can I view all meals\nadded by other chefs?',
-        answer: 'Yes, you can browse through all the meals added by various chefs in the All Meals section. You can filter meals by categories like cuisine, price range, or popularity.'),
+        question: 'howCanIEditProfilePhoto',
+        answer: 'answer9'),
 
     QuestionsAndAnswersModel(
-        question: 'How can I edit my profile photo?',
-        answer: 'To update your profile photo, go to the Profile section, click on your current photo, and select a new image from your device.'),
+        question: 'howDoILogout',
+        answer: 'answer10'),
 
     QuestionsAndAnswersModel(
-        question: 'How do I log out of the app?',
-        answer: 'You can log out by going to the drawer menu and selecting the Log Out option. This will securely log you out of your account.'),
-
-    QuestionsAndAnswersModel(
-        question: 'What happens to my caching data\nwhen I logout of the app?',
-        answer: 'All your data will be saved and accessible only after you log back in. This will ensure that your data is not lost when you log out.'),
+        question: 'whatHappensToMyCachingData',
+        answer: 'answer11'),
 
 
   ];

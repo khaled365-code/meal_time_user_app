@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -43,7 +45,7 @@ class _OpenedContainerState extends State<OpenedContainer> {
           children: [
             Row(
               children: [
-                Text(widget.questionsAndAnswersModel.question,
+                Text(widget.questionsAndAnswersModel.question.tr(context),
                   style: AppTextStyles.bold14(context).copyWith(
                     color: AppColors.c1E1E2E
                   ),),
@@ -55,7 +57,7 @@ class _OpenedContainerState extends State<OpenedContainer> {
              Column(
                children: [
                  SpaceWidget(height: 8,),
-                 Text(widget.questionsAndAnswersModel.answer,
+                 Text(widget.questionsAndAnswersModel.answer.tr(context),
                  style: AppTextStyles.regular14(context).copyWith(color: AppColors.c757575),)
                ],
              ):SizedBox.shrink()

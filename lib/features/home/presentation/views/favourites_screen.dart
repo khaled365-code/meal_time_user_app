@@ -132,11 +132,18 @@ class FavouritesScreen extends StatelessWidget {
               ),
               child: isArabic()==false?
               Center(
-                  child: SvgPicture.asset(ImageConstants.arrowBackIcon,width: 10,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)):
+                  child:
+                  SvgPicture.asset(
+                    ImageConstants.arrowBackIcon,
+                    width: 8,
+                    colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)):
               Center(
                   child: Transform.rotate(
                     angle: 3.14159,
-                      child: SvgPicture.asset(ImageConstants.arrowBackIcon,width: 10,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)))
+                      child: SvgPicture.asset(
+                        ImageConstants.arrowBackIcon,
+                        width: 8,
+                        colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn),)))
             ),
           ),
         ),

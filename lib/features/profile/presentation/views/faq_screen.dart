@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../../core/widgets/space_widget.dart';
@@ -43,7 +45,7 @@ class _FaqScreenState extends State<FaqScreen> {
                         SpaceWidget(height: 32,),
                         FaqScreenAppBar(),
                         SpaceWidget(height: 31),
-                        Text('How can we help you?',
+                        Text('howCanWeHelp'.tr(context),
                           style: AppTextStyles.bold20(context).copyWith(
                               color: AppColors.c1E1E2E
                           ),),

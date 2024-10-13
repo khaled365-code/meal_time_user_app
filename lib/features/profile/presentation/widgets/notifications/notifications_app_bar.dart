@@ -5,6 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -30,15 +32,25 @@ class NotificationsAppBar extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: AppColors.cECF0F4
             ),
-            child: Center(
+            child: isArabic()==false?
+            Center(
               child: SvgPicture.asset(
-                  width: 8, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+                  width: 8,
+                  ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+            ):
+            Center(
+              child: Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(
+                    width: 8,
+                    ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c181C2E, BlendMode.srcIn)),
+              ),
             ),
           ),
         ),
         SpaceWidget(width: 16,),
         Text(
-          'Notifications', style: AppTextStyles.regular17(
+          'notifications'.tr(context), style: AppTextStyles.regular17(
             context).copyWith(color: AppColors.c181C2E),),
         Spacer(),
         GestureDetector(
@@ -46,7 +58,7 @@ class NotificationsAppBar extends StatelessWidget {
           {
             NotificationsCubit.get(context).clearAllLocalNotifications();
           },
-            child: Text('Clear all',style: AppTextStyles.regular17(context).copyWith(color: AppColors.cFF7622))),
+            child: Text('clearAll'.tr(context),style: AppTextStyles.regular17(context).copyWith(color: AppColors.cFF7622))),
       ],
     );;
   }

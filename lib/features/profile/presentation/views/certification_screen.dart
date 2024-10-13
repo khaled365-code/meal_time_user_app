@@ -3,6 +3,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/database/api/api_keys.dart';
 import '../../../../core/database/cache/cache_helper.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -49,20 +51,20 @@ class CertificationScreen extends StatelessWidget {
               ),
               Spacer(),
               Center(
-                child: Text('Certification!',style: AppTextStyles.extraBold24(context).copyWith(
+                child: Text('certification'.tr(context),style: AppTextStyles.extraBold24(context).copyWith(
                   color: AppColors.c00243C,
                   fontWeight: FontWeightHelper.bold
                 ),),
               ),
               SpaceWidget(height: 10,),
               Center(
-                child: Text('Here is your health certificate',style: AppTextStyles.regular17(context).copyWith(
+                child: Text('hereYourHealthCertificate'.tr(context),style: AppTextStyles.regular17(context).copyWith(
                     color: AppColors.cA4ACAD,
                 ),),
               ),
               SpaceWidget(height: 5,),
               Center(
-                child: Text('enjoy our service!',style: AppTextStyles.regular17(context).copyWith(
+                child: Text('enjoyOurService'.tr(context),style: AppTextStyles.regular17(context).copyWith(
                     color: AppColors.cA4ACAD,
                 ),),
               ),

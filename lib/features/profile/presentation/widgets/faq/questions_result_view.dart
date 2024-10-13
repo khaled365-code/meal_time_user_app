@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -18,7 +19,7 @@ class FaqQuestionsResultView extends StatelessWidget {
     return FaqCubit.get(context).filteredQuestionsAndAnswersList.length==0?
     Center(
       child: Text(
-        'No result found',
+        'noResultFound'.tr(context),
         style: AppTextStyles.bold17(context).copyWith(
             color: AppColors.c1E1E2E
         ),

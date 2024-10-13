@@ -4,6 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -16,10 +18,10 @@ class AppUpdatesListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsetsDirectional.zero,
-      title: Text('App updates',style: AppTextStyles.bold15(context).copyWith(
+      title: Text('appUpdates'.tr(context),style: AppTextStyles.bold15(context).copyWith(
           color: AppColors.c32343E
       ),),
-      subtitle: Text('Allows to get all updates and new features',style: AppTextStyles.regular13(context).copyWith(
+      subtitle: Text('allowGetUpdates'.tr(context),style: AppTextStyles.regular13(context).copyWith(
           color: AppColors.cA0A5BA
       ),),
       trailing: Switch(

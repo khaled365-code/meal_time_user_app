@@ -4,6 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -29,10 +31,10 @@ class FamousQuestionItem extends StatelessWidget {
           SpaceWidget(height: 16,),
           FittedBox(
             fit: BoxFit.scaleDown,
-              child: Text('Questions about',style: AppTextStyles.regular14(context).copyWith(color: AppColors.c616161),)),
+              child: Text('questionsAbout'.tr(context),style: AppTextStyles.regular14(context).copyWith(color: AppColors.c616161),)),
           FittedBox(
               fit: BoxFit.scaleDown,
-              child: Text(famousQuestionsModel.questionTitle,style: AppTextStyles.bold15(context).copyWith(color: AppColors.c1E1E2E),)),
+              child: Text(famousQuestionsModel.questionTitle.tr(context),style: AppTextStyles.bold15(context).copyWith(color: AppColors.c1E1E2E),)),
 
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/widgets/space_widget.dart';
 import '../../cubits/settings_cubit/settings_cubit.dart';
 import 'app_updates_list_tile.dart';
@@ -25,7 +26,7 @@ class GeneralSettingsContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'General Settings',
+            'generalSettings'.tr(context),
             style: AppTextStyles.bold18(context).copyWith(
                 color: AppColors.c181C2E),),
           SpaceWidget(height: 16,),

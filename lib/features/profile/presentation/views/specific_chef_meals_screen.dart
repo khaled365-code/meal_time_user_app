@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/database/api/api_keys.dart';
 import '../../../../core/database/cache/cache_helper.dart';
@@ -56,10 +57,13 @@ class SpecificChefMealsScreen extends StatelessWidget {
                         BlocBuilder<GetSpecificChefMealsCubit,GetSpecificChefMealsState>(
                           builder: (context, state) {
                             return Center(
-                              child: Text('Found ${GetSpecificChefMealsCubit
+                              child: Text('found'.tr(context)+ ' ${isArabic()==false? GetSpecificChefMealsCubit
                                   .get(context)
                                   .chefMeals
-                                  ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0} meals ',
+                                  ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0:translateNumbersToArabic(GetSpecificChefMealsCubit
+                                  .get(context)
+                                  .chefMeals
+                                  ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0)} '+ 'meals'.tr(context),
                                   style: AppTextStyles.bold28(context).copyWith(
                                       color: AppColors.c32343E
                                   )),

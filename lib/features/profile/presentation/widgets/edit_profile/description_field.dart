@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -14,7 +16,7 @@ class EditProfileDescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Description'.toUpperCase(),
+        title: 'description'.tr(context).toUpperCase(),
         childWidget: CustomOutlineTextField(
           controller: EditProfileCubit.get(context).discController,
           keyboardType: TextInputType.multiline,
@@ -23,11 +25,11 @@ class EditProfileDescriptionField extends StatelessWidget {
           {
             if(value!.isEmpty)
               {
-                return 'description must not be empty';
+                return 'descriptionMustNotBeEmpty'.tr(context);
               }
             if(value.length < 20)
             {
-              return 'description length must be at least 20 characters long';
+              return 'descriptionLess20'.tr(context);
             }
             else
             {

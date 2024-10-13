@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
 import '../../../../../core/widgets/custom_outline_text_field.dart';
 import '../../../../../core/widgets/name_and_text_field_widget.dart';
@@ -15,7 +17,7 @@ class EditProfilePhoneField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'Phone Number'.toUpperCase(),
+        title: 'phoneNumber'.tr(context).toUpperCase(),
         childWidget: CustomOutlineTextField(
           inputFormatters:
           [
@@ -24,15 +26,16 @@ class EditProfilePhoneField extends StatelessWidget {
           controller: EditProfileCubit.get(context).phoneController,
           keyboardType: TextInputType.number,
           maxLines: 1,
+          maxLength: 11,
           validator: (value)
           {
             if(value!.isEmpty)
               {
-                return 'phone must not be empty';
+                return 'phoneMustNotBeEmpty'.tr(context);
               }
             if(value.length < 10)
             {
-              return 'phone length must be at least 10 characters long';
+              return 'phoneLength10'.tr(context);
             }
             else
             {

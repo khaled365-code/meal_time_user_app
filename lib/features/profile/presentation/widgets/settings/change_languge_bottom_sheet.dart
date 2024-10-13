@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:new_meal_time_app/core/localization/localization_cubit/localization_cubit.dart';
-import '../../../../../core/database/api/api_keys.dart';
-import '../../../../../core/database/cache/cache_helper.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/line_widget.dart';
@@ -34,9 +34,11 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                 SpaceWidget(height: 20,),
                 Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 10.w),
-                  child: FittedBox(child: Text('Would you like to change app language',style: AppTextStyles.bold16(context).copyWith(color: AppColors.cA0A5BA),)),
+                  child: FittedBox(child: Text('likeChangeAppLanguage'.tr(context),style: AppTextStyles.bold16(context).copyWith(color: AppColors.cA0A5BA),)),
                 ),
-                Text('To (Arabic) ?',style: AppTextStyles.bold16(context).copyWith(color: AppColors.cA0A5BA),),
+                Text(
+                  isArabic()==false?
+                  'toArabic'.tr(context):'toEnglish'.tr(context),style: AppTextStyles.bold16(context).copyWith(color: AppColors.cA0A5BA),),
                 SpaceWidget(height: 10,),
                 LineWidget(
                   height: 3,
@@ -47,7 +49,9 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                     {
                       LocalizationCubit.get(context).changeLanguageToArabic();
                     },
-                    child: Text('Change to Arabic (AR)',style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
+                    child: Text(
+                      isArabic()==false?
+                      'changeToArabic'.tr(context):'changeToEnglish'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
                 SpaceWidget(height: 20,),
                 LineWidget(
                   height: 3,
@@ -58,7 +62,11 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                     {
                       LocalizationCubit.get(context).changeLanguageToEnglish();
                     },
-                    child: Text('Keep English',style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
+                    child: Text(
+                      isArabic()==false?
+                      'keepEnglish'.tr(context):'keepArabic'.tr(context),
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
                 SpaceWidget(height: 20,),
 
 
@@ -72,7 +80,7 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
           ),
           SpaceWidget(height: 10,),
           SharedButton(
-            btnText: 'Cancel',
+            btnText: 'cancel'.tr(context),
             onPressed: ()
             {
               Navigator.pop(context);

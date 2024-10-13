@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
 import '../../cubits/settings_cubit/settings_cubit.dart';
@@ -19,10 +21,10 @@ class NotificationsSettingsListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text('General Notifications',style: AppTextStyles.bold15(context).copyWith(
+      title: Text('generalNotifications'.tr(context),style: AppTextStyles.bold15(context).copyWith(
           color: AppColors.c32343E
       ),),
-      subtitle: Text('Allows us to send notifications to your device',style: AppTextStyles.regular13(context).copyWith(
+      subtitle: Text('allowSendNotifications'.tr(context),style: AppTextStyles.regular13(context).copyWith(
           color: AppColors.cA0A5BA
       ),),
       contentPadding: EdgeInsetsDirectional.zero,

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widgets/space_widget.dart';
@@ -23,7 +25,7 @@ class AccountSettingsContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Account Settings',style: AppTextStyles.bold18(context).copyWith(color: AppColors.c181C2E),),
+            'accountSettings'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.c181C2E),),
           SpaceWidget(height: 5,),
           LanguageListTile(),
           Divider(

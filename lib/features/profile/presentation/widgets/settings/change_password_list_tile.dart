@@ -3,6 +3,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:new_meal_time_app/core/commons/commons.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'change_password_bottom_sheet.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -24,10 +26,10 @@ class ChangePasswordListTile extends StatelessWidget {
           builder: (context) => ChangePasswordBottomSheet(),);
 
       },
-      title: Text('Change Password',style: AppTextStyles.bold15(context).copyWith(
+      title: Text('changePassword'.tr(context),style: AppTextStyles.bold15(context).copyWith(
           color: AppColors.c32343E
       ),),
-      subtitle: Text('Allows to change your current password whenever you want',style: AppTextStyles.regular13(context).copyWith(
+      subtitle: Text('allowsChangePassword'.tr(context),style: AppTextStyles.regular13(context).copyWith(
           color: AppColors.cA0A5BA
       ),),
       contentPadding: EdgeInsetsDirectional.zero,
