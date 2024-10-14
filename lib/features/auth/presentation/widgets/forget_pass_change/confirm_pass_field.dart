@@ -39,7 +39,7 @@ class ConfirmPassField extends StatelessWidget {
             {
               return 'youMustConfirmPassword'.tr(context);
             }
-            if(ForgetPassCubit.get(context).confirmNewPasswordController.text!=ForgetPassCubit.get(context).newPasswordController.text)
+            if(value!=ForgetPassCubit.get(context).newPasswordController.text)
             {
               return 'passwordsNotMatch'.tr(context);
             }

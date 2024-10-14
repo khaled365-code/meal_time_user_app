@@ -190,7 +190,7 @@ final Map<String, String> enUs =
   'removeThisPhoto':'Remove This Photo',
 
   'nameLength20':'name length must be less than or equal to 20',
-  'phoneLength10':'phone length must be at least 10 characters long',
+  'phoneLength10':'phone length must be at least 11 characters long',
   'brandNameLess15':'brand name length must be less than or equal to 15 characters long',
   'brandNameLeast3':'brand name length must be at least 3 characters long',
   'descriptionLess20':'description length must be at least 20 characters long',
@@ -321,6 +321,10 @@ final Map<String, String> enUs =
   'wantLogout?':'Do you want to logout?',
   'canLoginWithSameEmail':'You can login with the same email address later',
   'confirm':'Confirm',
+
+
+
+  'youLoggedInSuccessfully':'You logged in successfully',
 
 
 

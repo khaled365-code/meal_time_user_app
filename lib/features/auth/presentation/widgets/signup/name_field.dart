@@ -24,7 +24,8 @@ class NameField extends StatelessWidget {
         child: CustomOutlineTextField(
           maxLines: 1,
           validator: (value) {
-            if (value!.isEmpty) {
+            if (value!.isEmpty)
+            {
               return 'mustEnterYourName'.tr(context);
             }
             if(value.length > 20)

@@ -5,9 +5,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
+import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/services/internet_connection_service.dart';
 import '../../../../core/widgets/shared_button.dart';
@@ -45,7 +47,7 @@ class LoginScreen extends StatelessWidget {
               alignment: AlignmentDirectional.bottomCenter,
               child: Container(
                 width: MediaQuery.sizeOf(context).width,
-                height: MediaQuery.sizeOf(context).height*(520/812),
+                height: MediaQuery.sizeOf(context).height*(540/812),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -155,7 +157,10 @@ class LoginScreen extends StatelessWidget {
       }
     if(state is LoginSuccessState)
       {
-        buildScaffoldMessenger(context: context, msg: state.successLoginModel.message);
+        buildScaffoldMessenger(
+            context: context,
+            msg: 'youLoggedInSuccessfully'.tr(context),
+            iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon));
         await LoginCubit.get(context).rememberMeFun(
             email: LoginCubit.get(context).emailController.text,
             password: LoginCubit.get(context).passwordController.text);

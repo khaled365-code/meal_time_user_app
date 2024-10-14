@@ -36,7 +36,7 @@ class PasswordField extends StatelessWidget {
             {
               return 'mustEnterPassword'.tr(context);
             }
-            else if(SignupCubit.get(context).passwordController.text != SignupCubit.get(context).confirmPassController.text)
+            else if(value != SignupCubit.get(context).confirmPassController.text)
             {
               return 'passwordsNotMatch'.tr(context);
             }

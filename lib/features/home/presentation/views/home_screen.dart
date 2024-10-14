@@ -35,13 +35,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   @override
-  void initState() {
+  void initState()
+  {
     super.initState();
-    LocalNotificationsService.localNotificationsStreamController.stream.listen((notificationResponse)
+    if (!LocalNotificationsService.localNotificationsStreamController.hasListener)
     {
-     navigate(context: context, route: Routes.notificationsScreen);
-    },);
+      LocalNotificationsService.localNotificationsStreamController.stream
+          .listen(
+            (notificationResponse) {
+          navigate(context: context, route: Routes.notificationsScreen);
+        },
+      );
+    }
   }
+
   @override
   Widget build(BuildContext context) {
       {

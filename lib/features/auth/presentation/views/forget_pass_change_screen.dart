@@ -45,7 +45,7 @@ class ForgetPassChangeScreen extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomCenter,
                 child: Container(
                   width: MediaQuery.sizeOf(context).width,
-                  height: MediaQuery.sizeOf(context).height*(520/812),
+                  height: MediaQuery.sizeOf(context).height*(525/812),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(

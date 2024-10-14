@@ -77,12 +77,14 @@ final bool? hasBackButton;
               child: isArabic()==false?
               Center(
                 child: SvgPicture.asset(
-                    width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),):
+                    width: 9,
+                    ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),):
               Transform.rotate(
                 angle: 3.14159,
                 child: Center(
                   child: SvgPicture.asset(
-                      width: 10, ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),),
+                      width: 9,
+                      ImageConstants.arrowBackIcon,colorFilter: ColorFilter.mode(AppColors.c5E616F, BlendMode.srcIn)),),
               )
             ),
           ),

@@ -41,7 +41,7 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
                     alignment: AlignmentDirectional.bottomCenter,
                     child: Container(
                       width: MediaQuery.sizeOf(context).width,
-                      height: MediaQuery.sizeOf(context).height *(520/812),
+                      height: MediaQuery.sizeOf(context).height *(540/812),
                       decoration: BoxDecoration(
                         color: AppColors.white,
                         borderRadius: BorderRadius.only(

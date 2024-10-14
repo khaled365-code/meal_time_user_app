@@ -25,10 +25,10 @@ class PhoneField extends StatelessWidget {
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
         child: CustomOutlineTextField(
-          maxLength: 11,
           inputFormatters:
           [
             FilteringTextInputFormatter.digitsOnly,
+            LengthLimitingTextInputFormatter(11),
           ],
           validator: (value) {
             if (value!.isEmpty) {

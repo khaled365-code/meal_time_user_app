@@ -34,7 +34,8 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupState>(
-      listener: (context, state) {
+      listener: (context, state)
+      {
         handleSignUpListener(state, context);
       },
       child: Scaffold(
@@ -50,7 +51,7 @@ class SignupScreen extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomCenter,
                 child: Container(
                     width: MediaQuery.sizeOf(context).width,
-                    height: MediaQuery.sizeOf(context).height * (520/ 812),
+                    height: MediaQuery.sizeOf(context).height * (540/ 812),
                     decoration: BoxDecoration(
                       color: AppColors.white,
                       borderRadius: BorderRadius.only(
@@ -99,7 +100,7 @@ class SignupScreen extends StatelessWidget {
                                         },
                                         imagePath: SignupCubit.get(context).signupImage!.path,
                                       )
-                                      ),
+                                   ),
                                   SpaceWidget(height: 24,),
                                                         
                                   NameField(),
@@ -158,7 +159,8 @@ class SignupScreen extends StatelessWidget {
                                   OptionsForAccountWidget(
                                     title1: 'alreadyHaveAccount'.tr(context),
                                     title2: 'signIn'.tr(context),
-                                    onActionTapped: () {
+                                    onActionTapped: ()
+                                    {
                                       Navigator.pop(context);
                                     },
                                   ),

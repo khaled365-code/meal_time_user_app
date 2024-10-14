@@ -23,6 +23,7 @@ class EmailLoginField extends StatelessWidget {
       childWidget: Padding(
         padding:  EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(
+          maxLines: 1,
           validator: (value)
           {
             if(value!.isEmpty)

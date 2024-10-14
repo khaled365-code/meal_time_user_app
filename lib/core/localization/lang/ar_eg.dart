@@ -192,7 +192,7 @@ final Map<String, String> arEg =
   'mustEnterDescription': 'يجب عليك إدخال وصف علامتك التجارية',
   'removeThisPhoto': 'إزالة هذه الصورة',
   'nameLength20': 'يجب أن يكون طول الاسم أقل من أو يساوي 20',
-  'phoneLength10': 'يجب أن يكون طول الهاتف 10 أرقام على الأقل',
+  'phoneLength10': 'يجب أن يكون طول الهاتف 11 أرقام على الأقل',
   'brandNameLess15': 'يجب أن يكون طول اسم العلامة التجارية أقل من أو يساوي 15 حرفًا',
   'brandNameLeast3': 'يجب أن يكون طول اسم العلامة التجارية 3 أحرف على الأقل',
   'descriptionLess20': 'يجب أن يكون طول الوصف 20 حرفًا على الأقل',
@@ -329,6 +329,9 @@ final Map<String, String> arEg =
   'wantLogout?': 'هل تريد تسجيل الخروج؟',
   'canLoginWithSameEmail': 'يمكنك تسجيل الدخول باستخدام نفس البريد الإلكتروني لاحقًا',
   'confirm': 'تأكيد',
+
+  'youLoggedInSuccessfully': 'لقد سجلت دخولك بنجاح',
+
 
 
 

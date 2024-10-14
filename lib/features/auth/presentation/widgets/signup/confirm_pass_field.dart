@@ -35,7 +35,7 @@ class ConfirmPassField extends StatelessWidget {
             if (value!.isEmpty) {
               return 'mustRetypePassword'.tr(context);
             }
-            else if(SignupCubit.get(context).passwordController.text != SignupCubit.get(context).confirmPassController.text)
+            else if(SignupCubit.get(context).passwordController.text != value)
             {
               return 'passwordsNotMatch'.tr(context);
             }
