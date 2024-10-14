@@ -17,7 +17,7 @@ class BrandNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'brandName',
+      title: 'brandName'.tr(context),
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),

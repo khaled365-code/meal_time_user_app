@@ -16,7 +16,7 @@ class ConfirmPassField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'retypePassword',
+      title: 'retypePassword'.tr(context),
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),

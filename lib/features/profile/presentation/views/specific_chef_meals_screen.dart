@@ -32,13 +32,13 @@ class SpecificChefMealsScreen extends StatelessWidget {
               {
 
                 await GetSpecificChefMealsCubit.get(context).getChefMealsFromApiFun(CacheHelper().getData(key: ApiKeys.id));
-                buildScaffoldMessenger(context: context, msg: 'Meals fetched successfully',iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
+                buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
 
               }
               else
               {
                 GetSpecificChefMealsCubit.get(context).getCachedChefMealsFun();
-                buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+                buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
               }
             },
             edgeOffset: 1,

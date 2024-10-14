@@ -18,7 +18,7 @@ class ConfirmPassField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'confirmPassword',
+        title: 'confirmPassword'.tr(context),
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           suffixIcon: GestureDetector(

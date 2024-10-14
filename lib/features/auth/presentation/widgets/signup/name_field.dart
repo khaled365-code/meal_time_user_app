@@ -18,7 +18,7 @@ class NameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'name',
+      title: 'name'.tr(context),
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(

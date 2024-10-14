@@ -40,7 +40,6 @@ class ForgetPassChangeScreen extends StatelessWidget {
                   title: 'verification'.tr(context),
                   subTitle: 'WeSentCodeEmail'.tr(context)+'\n$emailText',
                  hasBackButton: true,
-                incomingContext: context,
               ),
               Align(
                 alignment: AlignmentDirectional.bottomCenter,
@@ -70,7 +69,7 @@ class ForgetPassChangeScreen extends StatelessWidget {
                           ConfirmPassField(),
                           SpaceWidget(height: 24.h,),
                           NameAndTextFieldWidget(
-                              title: 'code',
+                              title: 'code'.tr(context),
                               childWidget: Row(
                                 children: List.generate(
                                     6,

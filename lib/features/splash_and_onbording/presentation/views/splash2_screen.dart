@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_meal_time_app/core/utils/app_colors.dart';
 
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
@@ -26,22 +28,47 @@ class _Splash2ScreenState extends State<Splash2Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: isArabic()==false?
-          Column(
+          child:
+          Stack(
+            clipBehavior: Clip.none,
             children:
             [
+              Container(
+                width: MediaQuery.sizeOf(context).width,
+                height: MediaQuery.sizeOf(context).height,
+                color: AppColors.white,
+              ),
+              isArabic()==false?
+              PositionedDirectional(
+                  top: 3.9.h,
+                  start: 0,
+                  child: Image.asset(
+                    ImageConstants.splashTopElipsisImage,
+                    fit: BoxFit.cover,
+                  ))
+              :
+              PositionedDirectional(
+                top: 3.9.h,
+                  end: MediaQuery.sizeOf(context).width*.99,
+                  child: Transform(
+                    transform: Matrix4.rotationY(3.14),
+                      child: Image.asset(ImageConstants.splashTopElipsisImage,fit: BoxFit.cover,))),
               Align(
-                alignment: AlignmentDirectional.topStart,
-                  child: Image.asset(ImageConstants.splashTopElipsisImage,fit: BoxFit.cover,)),
-              Spacer(),
-              Image.asset(ImageConstants.splashLogoSmallImage,fit: BoxFit.cover,),
-              Spacer(),
-              Align(
-                  alignment: AlignmentDirectional.bottomEnd,
-                  child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,)),
+                alignment: AlignmentDirectional.center,
+                  child: Image.asset(ImageConstants.splashLogoSmallImage,fit: BoxFit.cover,)),
+              isArabic()==false?
+              PositionedDirectional(
+                  top: MediaQuery.sizeOf(context).height*.675,
+                  end: 3.w,
+                  child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,)):
+              PositionedDirectional(
+                  top: MediaQuery.sizeOf(context).height*.675,
+                  end: 10.w,
+                  child: Transform.rotate(
+                    angle: 1.6,
+                      child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,))),
             ],
-          ):
-          Center(child: Image.asset(ImageConstants.splashLogoSmallImage,fit: BoxFit.cover,),)),
+          )),
     );
   }
 

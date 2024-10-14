@@ -19,7 +19,7 @@ class EmailFieldSendCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'email',
+        title: 'email'.tr(context),
         childWidget: CustomOutlineTextField(
           controller: ForgetPassCubit.get(context).emailForForgetPassController,
           hintText: 'example@gmail.com',

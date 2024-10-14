@@ -18,7 +18,7 @@ class LoginPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'password',
+      title: 'password'.tr(context),
       childWidget:  Padding(
         padding:  EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(

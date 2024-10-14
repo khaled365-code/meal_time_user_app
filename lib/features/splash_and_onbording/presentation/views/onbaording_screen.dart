@@ -85,8 +85,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
             ),
-            SpaceWidget(height: 69.h,),
-            SharedButton(btnText: currentIndex!=2?
+            SpaceWidget(height: 69,),
+            SharedButton(
+              btnText: currentIndex!=2?
             'next'.tr(context):'getStarted'.tr(context),
               onPressed: ()
               {
@@ -101,7 +102,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
             SizedBox(height: 16,),
-            currentIndex!=2? GestureDetector(
+            currentIndex!=2?
+            GestureDetector(
               onTap: ()
                 {
                   navigate(context: context, route: Routes.loginScreen,replacement: true);

@@ -10,11 +10,10 @@ import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/space_widget.dart';
 
 class AuthHeaderWidget extends StatelessWidget {
-  const AuthHeaderWidget({super.key, required this.title, required this.subTitle, this.hasBackButton, this.incomingContext});
+  const AuthHeaderWidget({super.key, required this.title, required this.subTitle, this.hasBackButton});
 
   final String title,subTitle;
 final bool? hasBackButton;
-final BuildContext? incomingContext;
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +42,21 @@ final BuildContext? incomingContext;
            alignment: AlignmentDirectional.topStart,
             child: Transform.rotate(
               angle: -.1,
-                child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,))):SizedBox.shrink(),
+                child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,)))
+         :PositionedDirectional(
+          end: MediaQuery.sizeOf(context).width*.67,
+          top: 16.h,
+          child: Transform.rotate(
+              angle: 1.1,
+            child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,)
+                   ),
+         ),
          isArabic()==false?
          Align(
              alignment: AlignmentDirectional.topEnd,
             child:
-            Image.asset(ImageConstants.loginOtherElipsisImage,color:hasBackButton==false?Colors.grey.withOpacity(.2):AppColors.cFF7622.withOpacity(.2),)):SizedBox.shrink(),
+            Image.asset(ImageConstants.loginOtherElipsisImage,color:hasBackButton==false?Colors.grey.withOpacity(.2):AppColors.cFF7622.withOpacity(.2),)):
+         SizedBox.shrink(),
 
         hasBackButton==true?
         PositionedDirectional(

@@ -33,7 +33,6 @@ class ForgetPasswordSendCodeScreen extends StatelessWidget {
                 children:
                 [
                   AuthHeaderWidget(
-                    incomingContext: context,
                     hasBackButton: true,
                     title: 'forgotPassword'.tr(context),
                     subTitle: 'pleaseSignIn'.tr(context),

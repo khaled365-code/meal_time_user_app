@@ -17,7 +17,7 @@ class NewPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'newPassword',
+        title: 'newPassword'.tr(context),
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           obscureText: ForgetPassCubit.get(context).newPasswordObscure,

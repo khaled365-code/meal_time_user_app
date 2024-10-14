@@ -17,7 +17,7 @@ class DescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'description',
+      title: 'description'.tr(context),
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meta/meta.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/database/errors/error_model.dart';
 import '../../../../../core/utils/app_assets.dart';
@@ -32,13 +33,13 @@ class GetSpecificChefMealsCubit extends Cubit<GetSpecificChefMealsState> {
       {
 
         await getChefMealsFromApiFun(chefId);
-        buildScaffoldMessenger(context: context, msg: 'Meals fetched successfully',iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
+        buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
 
       }
     else
       {
        getCachedChefMealsFun();
-       buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+       buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
       }
 
   }

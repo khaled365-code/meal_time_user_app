@@ -20,7 +20,7 @@ class PhoneField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-      title: 'phone',
+      title: 'phone'.tr(context),
       childWidget: Padding(
         padding: EdgeInsetsDirectional.only(
             end: 24.w),
