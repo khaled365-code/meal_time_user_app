@@ -18,7 +18,7 @@ class AddMealCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'mealCategory',
+        title: 'mealCategory'.tr(context),
         childWidget: Container(
           decoration: BoxDecoration(
             color: AppColors.cF0F5FA,
@@ -28,9 +28,9 @@ class AddMealCategoryWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: Theme(
-             data: Theme.of(context).copyWith(
-              canvasColor: Colors.transparent, // background color for the dropdown items
-              buttonTheme: ButtonTheme.of(context).copyWith(
+               data: Theme.of(context).copyWith(
+               canvasColor: Colors.transparent, // background color for the dropdown items
+               buttonTheme: ButtonTheme.of(context).copyWith(
                 alignedDropdown: true, //If false (the default), then the dropdown's menu will be wider than its button.
               )),
                   child: DropdownButton(

@@ -113,7 +113,7 @@ final Map<String, String> arEg =
   'newCategory': 'فئة جديدة',
   'writeNewMealDescription': 'اكتب وصف الوجبة الجديدة هنا',
   'writeNewMealPrice': 'اكتب سعر الوجبة الجديدة هنا',
-  'mealUpdatedSuccessfully': ' تم تحديثها بنجاح',
+  'mealUpdatedSuccessfully': 'تم تحديثها بنجاح',
   'detailsModified': 'تم تعديل تفاصيل الوجبه بنجاح. يمكنك مراجعة التغييرات في أي وقت',
   'nothingToUpdate':'لا يوجد تحديثات',
   'noInternetConnection': 'لا يوجد اتصال بالإنترنت',

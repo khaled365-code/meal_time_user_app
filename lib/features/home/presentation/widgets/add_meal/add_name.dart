@@ -17,7 +17,7 @@ class AddMealNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'mealName',
+        title: 'mealName'.tr(context),
         childWidget: CustomOutlineTextField(
           maxLines: 1,
           inputFormatters:
@@ -45,7 +45,7 @@ class AddMealNameTextField extends StatelessWidget {
               return null;
             }
           },
-          keyboardType: TextInputType.multiline,
+          keyboardType: TextInputType.text,
         ));
   }
 }

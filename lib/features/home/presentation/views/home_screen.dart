@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -62,12 +63,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     if (await InternetConnectionCheckingService.checkInternetConnection() == true)
                     {
                       await SystemMealsCubit.get(context).getAllMealsFromApiFun();
-                      buildScaffoldMessenger(context: context, msg: 'Meals fetched successfully',iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
+                      buildScaffoldMessenger(
+                          context: context,
+                          msg: 'mealsFetchedSuccessfully'.tr(context),
+                          iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+                          snackBarBehavior: SnackBarBehavior.floating);
 
                     }
                     else
                       {
-                        buildScaffoldMessenger(context: context, msg: 'You are offline',iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+                        buildScaffoldMessenger(
+                            context: context,
+                            msg: 'youAreOffline'.tr(context),
+                            iconWidget: Icon(Icons.wifi_off,color: AppColors.white,)
+                            ,snackBarBehavior: SnackBarBehavior.floating);
                       }
                   },
                   edgeOffset: 1,
@@ -124,7 +133,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           return SliverList(
                             delegate: SliverChildBuilderDelegate(
                               (context, index) => GestureDetector(
-                                onTap: () {
+                                onTap: ()
+                                {
                                   navigate(
                                       context: context,
                                       route: Routes.mealDetailsScreen,
@@ -195,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       }),
                       SliverToBoxAdapter(
                           child: SpaceWidget(
-                        height: 30,
+                        height: 32,
                       ))
                     ],
                   ),

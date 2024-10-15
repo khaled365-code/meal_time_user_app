@@ -40,7 +40,7 @@ class _Splash2ScreenState extends State<Splash2Screen> {
               ),
               isArabic()==false?
               PositionedDirectional(
-                  top: 3.9.h,
+                  top: 0,
                   start: 0,
                   child: Image.asset(
                     ImageConstants.splashTopElipsisImage,
@@ -48,7 +48,7 @@ class _Splash2ScreenState extends State<Splash2Screen> {
                   ))
               :
               PositionedDirectional(
-                top: 3.9.h,
+                  top: 0,
                   end: MediaQuery.sizeOf(context).width*.99,
                   child: Transform(
                     transform: Matrix4.rotationY(3.14),
@@ -58,12 +58,12 @@ class _Splash2ScreenState extends State<Splash2Screen> {
                   child: Image.asset(ImageConstants.splashLogoSmallImage,fit: BoxFit.cover,)),
               isArabic()==false?
               PositionedDirectional(
-                  top: MediaQuery.sizeOf(context).height*.675,
-                  end: 3.w,
+                  bottom: 0,
+                  end: 0,
                   child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,)):
               PositionedDirectional(
-                  top: MediaQuery.sizeOf(context).height*.675,
-                  end: 10.w,
+                  top: MediaQuery.sizeOf(context).height*.71,
+                  end: 0,
                   child: Transform.rotate(
                     angle: 1.6,
                       child: Image.asset(ImageConstants.splashBottomElipsisImage,fit: BoxFit.cover,))),

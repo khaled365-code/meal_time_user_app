@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/commons/commons.dart';
 import '../../../../core/commons/global_models/local_notifications_model.dart';
+import '../../../../core/routes/routes.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
@@ -28,7 +29,8 @@ import '../widgets/update_meal/update_meal_name_widget.dart';
 import '../widgets/update_meal/update_price_field_widget.dart';
 
 
-class UpdateMealScreen extends StatelessWidget {
+class UpdateMealScreen extends StatelessWidget
+{
   const UpdateMealScreen({super.key});
 
   @override
@@ -61,7 +63,8 @@ class UpdateMealScreen extends StatelessWidget {
                               UpdateMealCubit.get(context).deleteUpdatedMealImageFun();
                             },
                             imagePath: UpdateMealCubit.get(context).updatedMealImage?.path,
-                            onCameraTap: () {
+                            onCameraTap: ()
+                            {
                               imagePick(imageSource: ImageSource.camera).then(
                                     (value) =>
                                         UpdateMealCubit.get(context).updateMealImageFun(image: value!),
@@ -78,7 +81,7 @@ class UpdateMealScreen extends StatelessWidget {
                             },
                           );
                         }),
-                         SpaceWidget(height: UpdateMealCubit.get(context).updatedMealImage == null ? 24 : 10,),
+                         SpaceWidget(height: UpdateMealCubit.get(context).updatedMealImage == null ? 24 : 5,),
                          UpdateMealNameField(updateMealCubit: UpdateMealCubit.get(context)),
                         SpaceWidget(height: 24,),
                         UpdatePriceField(updateMealCubit: UpdateMealCubit.get(context)),
@@ -88,7 +91,7 @@ class UpdateMealScreen extends StatelessWidget {
                         BlocBuilder<UpdateMealCubit, UpdateMealState>(
                             builder: (context,state){
                               return NameAndTextFieldWidget(
-                                  title: 'newCategory',
+                                  title: 'newCategory'.tr(context),
                                   childWidget: Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.cF0F5FA,
@@ -157,7 +160,8 @@ class UpdateMealScreen extends StatelessWidget {
                                 }
                               else
                                 {
-                                  return SharedButton(btnText: 'updateThisMeal'.tr(context),
+                                  return SharedButton(
+                                    btnText: 'updateThisMeal'.tr(context),
                                     btnTextStyle: AppTextStyles.bold16(context)
                                         .copyWith(
                                         color: AppColors.white
@@ -167,7 +171,7 @@ class UpdateMealScreen extends StatelessWidget {
                                       await updateMealFun(context, receivedMeal);
                                     },);}
                             },),
-                        SpaceWidget(height: 30,)
+                        SpaceWidget(height: 32,)
 
                       ],
                     ),
@@ -189,15 +193,16 @@ class UpdateMealScreen extends StatelessWidget {
         id: 55,
         image: ImageConstants.newMealAlarmImage,
         payload: UpdateMealCubit.get(context).updatedMealImage?.path??imagePath,
-        title: '${receivedMeal.name}'+ 'mealUpdatedSuccessfully'.tr(context) + '${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to'.tr(context)+ UpdateMealCubit.get(context).updateMealNameController.text}',
+        title: '${receivedMeal.name}'+' '+ 'mealUpdatedSuccessfully'.tr(context) + '${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to'.tr(context)+ UpdateMealCubit.get(context).updateMealNameController.text}',
         body: 'detailsModified'.tr(context)
       );
-      LocalNotificationsService.showBasicNotification(localNotificationsModel: localNotificationsModel);
+     await LocalNotificationsService.showBasicNotification(localNotificationsModel: localNotificationsModel);
      await NotificationsCubit.get(context).saveLocalNotificationsFun(localNotification: localNotificationsModel);
      UpdateMealCubit.get(context).updateMealNameController.clear();
      UpdateMealCubit.get(context).updateMealDescriptionController.clear();
      UpdateMealCubit.get(context).updateMealPriceController.clear();
       UpdateMealCubit.get(context).updatedMealImage=null;
+     Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => true,);
     }
     if (state is UpdateMealFailureState)
     {
@@ -206,12 +211,16 @@ class UpdateMealScreen extends StatelessWidget {
 
         buildScaffoldMessenger(
             context: context,
-            msg: state.errorModel.error!.toString().substring(1, state.errorModel.error!.toString().length - 1));
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+             msg: state.errorModel.error!.toString().substring(1,
+                state.errorModel.error!.toString().length - 1));
       }
       else
       {
         buildScaffoldMessenger(
-            context: context, msg: state.errorModel.errorMessage!);
+            iconWidget: Icon(Icons.error_outline,color: AppColors.white,size: 25.sp,),
+            context: context,
+            msg: state.errorModel.errorMessage!);
       }
     }
   }

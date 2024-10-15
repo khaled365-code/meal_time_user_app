@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-
 import '../../../data/models/get_meals_model/system_all_meals.dart';
 import '../../../data/repos/home_repo_implementation.dart';
-
 part 'favourites_and_history_state.dart';
+
+
 
 class FavouritesAndHistoryCubit extends Cubit<FavouritesAndHistoryState> {
   FavouritesAndHistoryCubit({required this.homeRepoImplementation}) : super(FavouritesAndHistoryInitial());

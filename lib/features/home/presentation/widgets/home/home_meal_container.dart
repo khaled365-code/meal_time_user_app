@@ -10,7 +10,6 @@ import '../../../../../core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../../core/widgets/space_widget.dart';
 import '../../../data/models/get_meals_model/system_all_meals.dart';
 
@@ -45,7 +44,7 @@ class HomeMealContainer extends StatelessWidget {
           Text(meal.description!,style: AppTextStyles.regular14(context).copyWith(
               color: AppColors.cA0A5BA
           ),),
-          SpaceWidget(height: 14,),
+          SpaceWidget(height: 16,),
           Row(
             children: [
               SvgPicture.asset(ImageConstants.priceIcon,colorFilter: ColorFilter.mode(AppColors.cFF7622, BlendMode.srcIn),),
@@ -54,7 +53,7 @@ class HomeMealContainer extends StatelessWidget {
               Text(meal.price.toString(),style: AppTextStyles.bold16(context).copyWith(
                   color: AppColors.c181C2E
               ),):
-              Text(translateNumbersToArabic(meal.price.toString()),style: AppTextStyles.bold16(context).copyWith(
+              Text(translateNumbersToArabic(meal.price),style: AppTextStyles.bold16(context).copyWith(
                   color: AppColors.c181C2E
               ),),
               Spacer(),

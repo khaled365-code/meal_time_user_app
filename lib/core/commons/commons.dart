@@ -119,7 +119,7 @@ buildScaffoldMessenger({required BuildContext context,required String msg,SnackB
 
 }
 
-String formatDate({required DateTime dateTime,bool? monthName=false,bool? isArabic,required BuildContext context})
+String formatDate({required DateTime dateTime,bool? monthName=false,bool? isArabic=false,required BuildContext context})
 {
   int year = dateTime.year;
   int month = dateTime.month;
@@ -127,7 +127,6 @@ String formatDate({required DateTime dateTime,bool? monthName=false,bool? isArab
   if(monthName==true)
     {
       return '$day ${getMonthName(month,context)} $year';
-
     }
   else
     {
@@ -185,9 +184,11 @@ String formatClock({required DateTime dateTime,bool? isArabic})
 getAmorPm(DateTime dateTime,BuildContext context)
 {
   int hour = dateTime.hour;
-  if (hour > 12) {
+  if (hour > 12)
+  {
     return 'pm'.tr(context);
-  } else {
+  } else
+  {
     return 'am'.tr(context);
   }
 }

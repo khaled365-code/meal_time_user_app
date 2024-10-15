@@ -4,11 +4,6 @@ part of 'system_meals_cubit.dart';
 sealed class SystemMealsState {}
 
 final class SystemMealsInitial extends SystemMealsState {}
-final class InternetNotConnectedForMealsState extends SystemMealsState {}
-final class InternetIsConnectedForMealsState extends SystemMealsState {}
-
-final class ChangeCurrentSelectedCategoryPositionState extends SystemMealsState {}
-
 
 final class GetAllMealsLoadingState extends SystemMealsState {}
 final class GetCachedMealsFailureState extends SystemMealsState {

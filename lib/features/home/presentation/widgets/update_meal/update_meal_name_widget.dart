@@ -20,17 +20,15 @@ class UpdateMealNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'newName',
+        title: 'newName'.tr(context),
         childWidget: CustomOutlineTextField(
           controller: updateMealCubit.updateMealNameController,
           hintText: 'writeNewMealName'.tr(context),
-          inputFormatters: [
+          maxLines: 1,
+          inputFormatters:
+          [
             LengthLimitingTextInputFormatter(30)
           ],
-          onFieldSubmitted: (value)
-          {
-
-          },
           keyboardType: TextInputType.text,
         ));
   }

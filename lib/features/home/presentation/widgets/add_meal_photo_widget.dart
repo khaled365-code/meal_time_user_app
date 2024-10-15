@@ -8,7 +8,6 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -93,29 +92,31 @@ class AddMealPhotoWidget extends StatelessWidget {
                 image: FileImage(File(imagePath!)),fit: BoxFit.fill)
           ),
         ),
-        SpaceWidget(height: 5.h,),
-        Align(
-          alignment: AlignmentDirectional.centerEnd,
-          child: GestureDetector(
-            onTap: onDeletePhotoPressed,
-            child: Container(
-              width: 50.w,
-              height: 50.h,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.primaryColor,
+        SpaceWidget(height: 10.h,),
+        Row(
+          children: [
+            Spacer(),
+            GestureDetector(
+                onTap: onDeletePhotoPressed,
+                child: Container(
+                  width: 50.w,
+                  height: 50.h,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.primaryColor,
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      ImageConstants.trashIcon,
+                      width: 25.w,
+                      colorFilter: ColorFilter.mode(
+                          AppColors.white,
+                          BlendMode.srcIn),
+                    )
+                  ),
+                ),
               ),
-              child: Center(
-                child: SvgPicture.asset(
-                  ImageConstants.trashIcon,
-                  width: 25.w,
-                  colorFilter: ColorFilter.mode(
-                      AppColors.white,
-                      BlendMode.srcIn),
-                )
-              ),
-            ),
-          ),
+          ],
         )
       ],
     );

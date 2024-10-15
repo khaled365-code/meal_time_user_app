@@ -21,7 +21,7 @@ class HomeShimmerContainer extends StatelessWidget {
             aspectRatio: 327/137,
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16.r),
+                  borderRadius: BorderRadius.circular(15.r),
                 image: DecorationImage(
                   image: AssetImage(
                     ImageConstants.noImage
@@ -57,7 +57,7 @@ class HomeShimmerContainer extends StatelessWidget {
                 ),
               )
           ),
-          SpaceWidget(height: 14,),
+          SpaceWidget(height: 16,),
           Row(
             children: [
               Expanded(

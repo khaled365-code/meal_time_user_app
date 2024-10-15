@@ -95,7 +95,7 @@ class AddMealCubit extends Cubit<AddMealState> {
     emit(DeleteMealPhotoState());
   }
 
-  GlobalKey<FormState> addMealFormKey=GlobalKey<FormState>();
+  GlobalKey<FormState> addMealFormKey=GlobalKey();
   AutovalidateMode addMealValidateMode=AutovalidateMode.disabled;
 
   activateAutoValidateMode()

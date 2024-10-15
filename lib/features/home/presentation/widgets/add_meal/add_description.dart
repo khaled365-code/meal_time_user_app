@@ -16,19 +16,13 @@ class AddMealDiscTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'mealDescription',
+        title: 'mealDescription'.tr(context),
         childWidget: CustomOutlineTextField(
           keyboardType: TextInputType.multiline,
           textInputAction: TextInputAction.newline,
-          maxLines: null,
           maxLength: 214,
-
           controller: AddMealCubit.get(context).mealDescriptionController,
           hintText: 'writeMealDescription'.tr(context),
-          onFieldSubmitted: (value)
-          {
-
-          },
           validator: (value) {
             if(value!.isEmpty)
             {

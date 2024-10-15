@@ -189,7 +189,6 @@ class AppRouter {
                 MultiBlocProvider(
                 providers:
                 [
-                  BlocProvider(create: (context) => locator<NotificationsCubit>(),),
                   BlocProvider(
                     lazy: false,
                     create: (context) => locator<GetUserAddressCubit>()..getUserAddressFun(),
@@ -209,8 +208,7 @@ class AppRouter {
                     create: (context) => HomeListsCubit(),
                   ),
                 ],
-                child: HomeScreen(),
-                                  ),
+                child: HomeScreen(),),
             settings: routeSettings);
 
       case Routes.loginScreen:

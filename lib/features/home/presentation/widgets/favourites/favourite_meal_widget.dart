@@ -111,7 +111,7 @@ class FavouriteMealWidget extends StatelessWidget {
                                          )),
                                          TextSpan(text: isArabic()==false?
                                          ' ${formatClock(dateTime: DateTime.parse(meal.createdAt!))}':
-                                         ' ${translateNumbersToArabic(formatClock(dateTime: DateTime.parse(meal.createdAt!)))}',style: AppTextStyles.regular14(context).copyWith(
+                                         ' ${translateNumbersToArabic(formatClock(dateTime: DateTime.parse(meal.createdAt!),isArabic: true))}',style: AppTextStyles.regular14(context).copyWith(
                                              color: AppColors.c6B6E82
                                          )),
                                        ]
@@ -137,10 +137,6 @@ class FavouriteMealWidget extends StatelessWidget {
                    ),
                  ),
                ),
-
-
-
-
              ],
            ),
          ),

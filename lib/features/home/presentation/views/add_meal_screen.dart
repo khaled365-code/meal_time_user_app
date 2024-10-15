@@ -1,5 +1,4 @@
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +26,8 @@ import '../widgets/add_meal/number_radio_button.dart';
 import '../widgets/add_meal/quantity_radio_button.dart';
 import '../widgets/add_meal_photo_widget.dart';
 
-class AddMealScreen extends StatelessWidget {
+class AddMealScreen extends StatelessWidget
+{
   const AddMealScreen({super.key});
 
   @override
@@ -139,9 +139,8 @@ class AddMealScreen extends StatelessWidget {
                                  onPressed: ()
                                  {
                                    handleAddMealPress(context);
-
                                  },),
-                               SpaceWidget(height: 30,)
+                               SpaceWidget(height: 32,)
 
                              ],
                            ),
@@ -200,8 +199,8 @@ class AddMealScreen extends StatelessWidget {
                 id: 40,
                 image: ImageConstants.newMealAlarmImage,
                 payload: AddMealCubit.get(context).mealImage?.path,
-                title: '${AddMealCubit.get(context).mealNameController.text+'mealAddedSuccessfully'.tr(context)}',
-                body: 'ThankSubmitting'.tr(context)+ ' ${AddMealCubit.get(context).mealNameController.text}'+ 'mealPending'.tr(context),
+                title: '${AddMealCubit.get(context).mealNameController.text+' '+'mealAddedSuccessfully'.tr(context)}',
+                body: 'ThankSubmitting'.tr(context)+ ' ${AddMealCubit.get(context).mealNameController.text} '+ 'mealPending'.tr(context),
               );
               LocalNotificationsService.showBasicNotification(
                   localNotificationsModel: localNotification);

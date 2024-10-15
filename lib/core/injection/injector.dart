@@ -11,7 +11,6 @@ import '../../features/home/presentation/cubits/add_meal_cubit/add_meal_cubit.da
 import '../../features/home/presentation/cubits/favourites_and_history_cubit/favourites_and_history_cubit.dart';
 import '../../features/home/presentation/cubits/get_chef_data_cubit/get_chef_data_cubit.dart';
 import '../../features/home/presentation/cubits/get_system_meals_cubit/system_meals_cubit.dart';
-import '../../features/home/presentation/cubits/home_screen_cubit/home_screen_cubit.dart';
 import '../../features/home/presentation/cubits/update_meal_cubit/update_meal_cubit.dart';
 import '../../features/profile/data/repos/profile_repo_implementation.dart';
 import '../../features/profile/presentation/cubits/change_password_cubit/change_password_cubit.dart';
@@ -37,7 +36,6 @@ setUpLocator()
   locator.registerLazySingleton<ProfileRepoImplementation>(() =>ProfileRepoImplementation(api: locator.get<DioConsumer>()));
   locator.registerLazySingleton<AuthRepoImplementation>(() =>AuthRepoImplementation(api: locator.get<DioConsumer>()),);
 
-  locator.registerFactory(() => HomeScreenCubit(homeRepoImplementation: locator.get<HomeRepoImplementation>()),);
   locator.registerFactory(() => GetChefDataCubit(homeRepoImplementation: locator.get<HomeRepoImplementation>()),);
   locator.registerFactory(() => GetUserAddressCubit(),);
   locator.registerFactory(() => NotificationsCubit(profileRepoImplementation: locator.get<ProfileRepoImplementation>()),);

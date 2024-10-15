@@ -17,17 +17,15 @@ class AddMealPriceTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'mealPrice',
+        title: 'mealPrice'.tr(context),
         childWidget: CustomOutlineTextField(
           controller: AddMealCubit.get(context).mealPriceController,
           hintText: 'writeMealPrice'.tr(context),
+          maxLines: 1,
           inputFormatters:
           [
             FilteringTextInputFormatter.digitsOnly,
           ],
-          onFieldSubmitted: (value) {
-
-          },
           validator: (value) {
             if(value!.isEmpty)
             {

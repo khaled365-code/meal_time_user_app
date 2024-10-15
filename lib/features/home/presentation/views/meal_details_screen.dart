@@ -45,7 +45,7 @@ class MealDetailsScreen extends StatelessWidget {
                           Text(receivedMeal.name!,style: AppTextStyles.bold20(context).copyWith(
                               color: AppColors.c181C2E
                           ),),
-                          SpaceWidget(height: 7,),
+                          SpaceWidget(height: 4,),
                           Text(receivedMeal.description!,style: AppTextStyles.regular14(context).copyWith(
                               color: AppColors.cA0A5BA
                           ),),
@@ -80,7 +80,7 @@ class MealDetailsScreen extends StatelessWidget {
                               Spacer(),
                             ],
                           ),
-                          SpaceWidget(height: 26.2,),
+                          SpaceWidget(height: 20,),
                           Row(
                             children: [
                               SvgPicture.asset(ImageConstants.timeIcon,colorFilter: ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),),
@@ -114,7 +114,7 @@ class MealDetailsScreen extends StatelessWidget {
                                   )),
                             ],
                           ),
-                          SpaceWidget(height: 19.2,),
+                          SpaceWidget(height: 10,),
                           Row(
                             children: [
                               SvgPicture.asset(ImageConstants.timeIcon,colorFilter: ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),),
@@ -154,7 +154,7 @@ class MealDetailsScreen extends StatelessWidget {
 
                         ],
                       ),
-                      SpaceWidget(height: 24,),
+                      SpaceWidget(height: 20,),
 
                     ],
                   ),
@@ -176,7 +176,7 @@ class MealDetailsScreen extends StatelessWidget {
                         {
                           navigate(context: context, route: Routes.updateMealScreen,arg: receivedMeal);
                         },),
-                      SpaceWidget(height: 30,)
+                      SpaceWidget(height: 32,)
                     ],
                   ),
                 ),

@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-
 import '../../../../../core/database/errors/error_model.dart';
 import '../../../../../core/utils/services/internet_connection_service.dart';
 import '../../../data/models/chef_info_model/chef_info_model.dart';

@@ -19,17 +19,15 @@ class UpdatePriceField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'newPrice',
+        title: 'newPrice'.tr(context),
         childWidget: CustomOutlineTextField(
+          maxLines: 1,
           controller: updateMealCubit.updateMealPriceController,
           hintText: 'writeNewMealPrice'.tr(context),
           inputFormatters:
           [
-           FilteringTextInputFormatter.digitsOnly,
+            FilteringTextInputFormatter.digitsOnly,
           ],
-          onFieldSubmitted: (value) {
-
-          },
           keyboardType: TextInputType.number,
         ));
   }

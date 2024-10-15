@@ -69,7 +69,6 @@ class UpdateMealCubit extends Cubit<UpdateMealState> {
   TextEditingController updateMealNameController=TextEditingController();
   TextEditingController updateMealDescriptionController=TextEditingController();
   TextEditingController updateMealPriceController=TextEditingController();
-  TextEditingController updateMealCategoryController=TextEditingController();
 
   updateMealFun({
     required String mealId,

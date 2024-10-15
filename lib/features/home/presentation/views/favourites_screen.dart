@@ -167,7 +167,7 @@ class FavouritesScreen extends StatelessWidget {
           ),
             indicatorColor: AppColors.cFF7622,
              indicatorSize: TabBarIndicatorSize.tab,
-            indicatorPadding: EdgeInsetsDirectional.only(start: 24.w,),
+            indicatorPadding: EdgeInsetsDirectional.only(start: 24.w,end: 24.w),
             dividerColor: AppColors.cCED7DF,
             tabs:
             [

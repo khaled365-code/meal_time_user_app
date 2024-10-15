@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 
@@ -19,7 +20,7 @@ class UpdateDescriptionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NameAndTextFieldWidget(
-        title: 'newDescription',
+        title: 'newDescription'.tr(context),
         childWidget: CustomOutlineTextField(
           controller: updateMealCubit.updateMealDescriptionController,
           hintText: 'writeNewMealDescription'.tr(context),
@@ -27,9 +28,6 @@ class UpdateDescriptionField extends StatelessWidget {
           textInputAction: TextInputAction.newline,
           maxLength: 214,
           maxLines: null,
-          onFieldSubmitted: (value) {
-
-          },
 
         ));
   }
