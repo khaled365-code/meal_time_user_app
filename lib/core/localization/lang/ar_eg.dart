@@ -244,7 +244,9 @@ final Map<String, String> arEg =
   'meals': 'من الوجبات',
   'clearAll':'مسح الكل',
   'delete':'حذف',
-  'profileUpdatedSuccessfully': 'تم تحديث الملف الشخصي بنجاح',
+  'profileUpdatedSuccessfully': 'تم تحديث ملفك الشخصي بنجاح',
+  'chefMealsFetchedSuccessfully': 'تم عرض وجباتك بنجاح',
+
 
 
 
@@ -297,9 +299,9 @@ final Map<String, String> arEg =
 
   'accountSettings': 'إعدادات الحساب',
   'language': 'اللغة',
-  'allowsLanguageSwitch': 'السماح بالتبديل بين الإنجليزية\nوالعربية كما تفضل',
+  'allowsLanguageSwitch': 'قم بالتبديل بين الإنجليزية والعربية\nكما تفضل',
   'changePassword': 'تغيير كلمة المرور',
-  'allowsChangePassword': 'السماح بتغيير كلمة المرور الحالية في أي وقت تريد',
+  'allowsChangePassword': 'قم بتغيير كلمة المرور الحالية في أي وقت تريد',
 
 
   'likeChangeAppLanguage': 'هل ترغب في تغيير لغة التطبيق؟',
@@ -322,6 +324,8 @@ final Map<String, String> arEg =
   'pleaseConfirmYourNewPassword': 'يرجى تأكيد كلمة المرور الجديدة',
   'passwordMustLeast6': 'يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل',
   'passwordsDoNotMatch': 'كلمات المرور الجديدة غير متطابقة',
+  'passwordChangedSuccessfully': 'تم تحديث كلمة المرور بنجاح',
+
 
 
   'sureDeleteAccount?': 'هل أنت متأكد أنك تريد حذف حسابك ؟',

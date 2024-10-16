@@ -44,7 +44,7 @@ final bool? hasBackButton;
               angle: -.1,
                 child: Image.asset(ImageConstants.splashTopElipsisImage,color:Colors.white,)))
          :PositionedDirectional(
-          end: MediaQuery.sizeOf(context).width*.67,
+          end: MediaQuery.sizeOf(context).width*.7,
           top: 16.h,
           child: Transform.rotate(
               angle: 1.1,

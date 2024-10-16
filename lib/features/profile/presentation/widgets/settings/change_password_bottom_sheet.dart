@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lottie/lottie.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
@@ -28,7 +29,7 @@ class ChangePasswordBottomSheet extends StatelessWidget {
       {
          handleChangePasswordListener(state, context);
       },
-  child: Scaffold(
+      child:Scaffold(
             backgroundColor: Colors.transparent,
             resizeToAvoidBottomInset: true,
             body: Builder(
@@ -125,15 +126,17 @@ class ChangePasswordBottomSheet extends StatelessWidget {
                   );
   }
 
-  void handleChangePasswordListener(ChangePasswordState state, BuildContext context) {
+  void handleChangePasswordListener(ChangePasswordState state, BuildContext context)
+  {
       if(state is ChangePasswordSuccessState)
       {
         ChangePasswordCubit.get(context).oldPasswordController.clear();
         ChangePasswordCubit.get(context).newPasswordController.clear();
-            ChangePasswordCubit.get(context).confirmPasswordController.clear();
+        ChangePasswordCubit.get(context).confirmPasswordController.clear();
         showToast(
             context: context,
-            msg: 'password updated successfully', toastStates: ToastStates.success);
+            msg: 'passwordChangedSuccessfully'.tr(context),
+            toastStates: ToastStates.success);
         Navigator.pop(context);
       }
     if(state is ChangePasswordFailureState)
@@ -142,7 +145,8 @@ class ChangePasswordBottomSheet extends StatelessWidget {
         {
           showToast(
               context: context,
-              msg: state.errorModel.error!.toString().substring(1,state.errorModel.error!.toString().length-1), toastStates: ToastStates.error);
+              msg: state.errorModel.error!.toString().substring(1,state.errorModel.error!.toString().length-1),
+              toastStates: ToastStates.error);
         }
         else
         {

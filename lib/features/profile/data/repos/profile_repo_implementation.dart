@@ -113,9 +113,13 @@ class ProfileRepoImplementation implements ProfileRepo
   }
 
   @override
-  Future<Either<ErrorModel, String>> updateProfile({ String? name, String? phone,
-     String? brandName, double? minCharge,
-     String? disc, MultipartFile? profilePic}) async
+  Future<Either<ErrorModel, String>> updateProfile({
+     String? name,
+     String? phone,
+     String? brandName,
+     double? minCharge,
+     String? disc,
+    MultipartFile? profilePic}) async
   {
     try
     {

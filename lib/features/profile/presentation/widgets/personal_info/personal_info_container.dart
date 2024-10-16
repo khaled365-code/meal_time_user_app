@@ -60,7 +60,12 @@ class PersonalInfoContainer extends StatelessWidget {
                 child: SvgPicture.asset(ImageConstants.emailProfileIcon),),
             ),
             title: Text('email'.tr(context).toUpperCase(),style: AppTextStyles.regular14(context).copyWith(color: AppColors.c32343E,)),
-            subtitle: FittedBox(child: Text(CacheHelper().getData(key: ApiKeys.email),style: AppTextStyles.regular14(context).copyWith(color: AppColors.c6B6E82,))),
+            subtitle: FittedBox(
+              fit: BoxFit.scaleDown,
+                alignment: AlignmentDirectional.centerStart,
+                child: Text(CacheHelper().getData(key: ApiKeys.email),
+                    style: AppTextStyles.regular14(context).copyWith(
+                      color: AppColors.c6B6E82,))),
           ),
           SpaceWidget(height: 16,),
           ListTile(

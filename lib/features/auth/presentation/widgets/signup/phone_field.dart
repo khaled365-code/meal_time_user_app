@@ -22,8 +22,7 @@ class PhoneField extends StatelessWidget {
     return NameAndTextFieldWidget(
       title: 'phone'.tr(context),
       childWidget: Padding(
-        padding: EdgeInsetsDirectional.only(
-            end: 24.w),
+        padding: EdgeInsetsDirectional.only(end: 24.w),
         child: CustomOutlineTextField(
           inputFormatters:
           [

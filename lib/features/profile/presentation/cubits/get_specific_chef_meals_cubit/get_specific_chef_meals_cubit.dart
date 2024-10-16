@@ -33,13 +33,21 @@ class GetSpecificChefMealsCubit extends Cubit<GetSpecificChefMealsState> {
       {
 
         await getChefMealsFromApiFun(chefId);
-        buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
+        buildScaffoldMessenger(
+            context: context,
+            msg: 'chefMealsFetchedSuccessfully'.tr(context),
+            iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+            snackBarBehavior: SnackBarBehavior.floating);
 
       }
     else
       {
        getCachedChefMealsFun();
-       buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+       buildScaffoldMessenger(
+           context: context,
+           msg: 'youAreOffline'.tr(context),
+           iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),
+           snackBarBehavior: SnackBarBehavior.floating);
       }
 
   }

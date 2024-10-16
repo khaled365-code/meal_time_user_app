@@ -40,53 +40,57 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
                   isArabic()==false?
                   'toArabic'.tr(context):'toEnglish'.tr(context),style: AppTextStyles.bold16(context).copyWith(color: AppColors.cA0A5BA),),
                 SpaceWidget(height: 10,),
-                LineWidget(
-                  height: 3,
-                ),
-                SpaceWidget(height: 20,),
                 GestureDetector(
-                   onTap: () async
+                  onTap: () async
+                  {
+                    if(isArabic()==true)
                     {
-                      if(isArabic()==true)
-                        {
-                          LocalizationCubit.get(context).changeLanguageToEnglish();
-                          Navigator.pop(context);
-                        }
-                      else
-                        {
-                        LocalizationCubit.get(context).changeLanguageToArabic();
-                        Navigator.pop(context);
-                        }
+                      LocalizationCubit.get(context).changeLanguageToEnglish();
+                      Navigator.pop(context);
+                    }
+                    else
+                    {
+                      LocalizationCubit.get(context).changeLanguageToArabic();
+                      Navigator.pop(context);
+                    }
 
-                    },
-                    child: Text(
-                      isArabic()==false?
-                      'changeToArabic'.tr(context):'changeToEnglish'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
-                SpaceWidget(height: 20,),
-                LineWidget(
-                  height: 3,
+                  },
+                  child: Column(
+                    children:
+                    [
+                      LineWidget(
+                        height: 3,
+                      ),
+                      SpaceWidget(height: 20,),
+                      Text(
+                        isArabic()==false?
+                        'changeToArabic'.tr(context):'changeToEnglish'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),),
+                      SpaceWidget(height: 20,),
+                      LineWidget(
+                        height: 3,
+                      ),
+                    ],
+                  ),
                 ),
                 SpaceWidget(height: 20,),
                 GestureDetector(
-                    onTap: () async
-                    {
-                      if(isArabic()==true)
-                         {
-                          LocalizationCubit.get(context).changeLanguageToArabic();
-                          Navigator.pop(context);
-                         }
-                      else
-                        {
-                          LocalizationCubit.get(context).changeLanguageToEnglish();
-                          Navigator.pop(context);
-                        }
-                    },
-                    child: Text(
-                      isArabic()==false?
-                      'keepEnglish'.tr(context):'keepArabic'.tr(context),
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),)),
-                SpaceWidget(height: 20,),
+                  onTap: () async
+                  {
+                   Navigator.pop(context);
+                  },
+                  child: Column(
+                    children:
+                    [
+                      Text(
+                        isArabic()==false?
+                        'keepEnglish'.tr(context):'keepArabic'.tr(context),
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bold18(context).copyWith(color: AppColors.primaryColor),),
+                      SpaceWidget(height: 20,),
+                    ],
+                  ),
+                )
+
 
 
 

@@ -19,31 +19,17 @@ class LocalizationCubit extends Cubit<LocalizationState> {
 
   changeLanguageToArabic() async
   {
-    if(currentLang=='ar')
-    {
-        return;
-    }
-    else
-    {
         currentLang='ar';
         await CacheHelper().saveData(key: ApiKeys.appCurrentLanguage, value: currentLang);
         emit(LanguageSwitchedToArabicState());
-    }
 
   }
 
   changeLanguageToEnglish() async
   {
-    if(currentLang=='en')
-      {
-        return;
-      }
-    else
-      {
         currentLang='en';
         await CacheHelper().saveData(key: ApiKeys.appCurrentLanguage, value: currentLang);
         emit(LanguageSwitchedToEnglishState());
-      }
 
   }
 

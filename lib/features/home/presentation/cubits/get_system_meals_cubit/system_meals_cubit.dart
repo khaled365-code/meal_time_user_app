@@ -64,7 +64,11 @@ class SystemMealsCubit extends Cubit<SystemMealsState> {
     {
       await getAllMealsFromApiFun();
       log('meals from api');
-      buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: isHomeScreen==true? SnackBarBehavior.floating:SnackBarBehavior.fixed);
+      buildScaffoldMessenger(
+          context: context,
+          msg: 'mealsFetchedSuccessfully'.tr(context),
+          iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+          snackBarBehavior: isHomeScreen==true? SnackBarBehavior.floating:SnackBarBehavior.fixed);
 
 
     }
@@ -72,7 +76,11 @@ class SystemMealsCubit extends Cubit<SystemMealsState> {
     {
       getMealsFromCacheFun();
       log('meals from cache');
-      buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: isHomeScreen==true? SnackBarBehavior.floating:SnackBarBehavior.fixed);
+      buildScaffoldMessenger(
+          context: context,
+          msg: 'youAreOffline'.tr(context),
+          iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),
+          snackBarBehavior: isHomeScreen==true? SnackBarBehavior.floating:SnackBarBehavior.fixed);
 
     }
   }

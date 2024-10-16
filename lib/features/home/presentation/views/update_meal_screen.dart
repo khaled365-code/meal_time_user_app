@@ -193,7 +193,7 @@ class UpdateMealScreen extends StatelessWidget
         id: 55,
         image: ImageConstants.newMealAlarmImage,
         payload: UpdateMealCubit.get(context).updatedMealImage?.path??imagePath,
-        title: '${receivedMeal.name}'+' '+ 'mealUpdatedSuccessfully'.tr(context) + '${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to'.tr(context)+ UpdateMealCubit.get(context).updateMealNameController.text}',
+        title: '${receivedMeal.name}'+' '+ 'mealUpdatedSuccessfully'.tr(context) + '${UpdateMealCubit.get(context).updateMealNameController.text.isEmpty?'':'to'.tr(context)+ ' ${UpdateMealCubit.get(context).updateMealNameController.text}'}',
         body: 'detailsModified'.tr(context)
       );
      await LocalNotificationsService.showBasicNotification(localNotificationsModel: localNotificationsModel);

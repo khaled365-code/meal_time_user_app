@@ -2,7 +2,6 @@
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:workmanager/workmanager.dart';
-
 import 'local_notifications_service.dart';
 
 
@@ -24,8 +23,8 @@ class WorkManagerService
   static Future<void> registerTask() async
   {
     await workManager.registerPeriodicTask(
-      'periodic scheduled daily notification at 12 AM ',
-      'periodic scheduled notification task at 12 AM ',
+      'periodic scheduled daily notification at 12 AM',
+      'periodic scheduled notification task at 12 AM',
       frequency: Duration(hours: 12),
     );
   }

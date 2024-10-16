@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/database/api/api_keys.dart';
 import '../../../../../core/database/cache/cache_helper.dart';
@@ -40,7 +39,7 @@ class NotificationsSettingsListTile extends StatelessWidget {
           inactiveTrackColor: AppColors.cC4C4C4,
           onChanged: (value)
           {
-            settingsCubit.onNotificationSwitched(value: value);
+            settingsCubit.onNotificationSwitched(value: value,context: context);
           }),
     );
   }

@@ -32,13 +32,21 @@ class SpecificChefMealsScreen extends StatelessWidget {
               {
 
                 await GetSpecificChefMealsCubit.get(context).getChefMealsFromApiFun(CacheHelper().getData(key: ApiKeys.id));
-                buildScaffoldMessenger(context: context, msg: 'mealsFetchedSuccessfully'.tr(context),iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),snackBarBehavior: SnackBarBehavior.floating);
+                buildScaffoldMessenger(
+                    context: context,
+                    msg: 'chefMealsFetchedSuccessfully'.tr(context),
+                    iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
+                    snackBarBehavior: SnackBarBehavior.floating);
 
               }
               else
               {
                 GetSpecificChefMealsCubit.get(context).getCachedChefMealsFun();
-                buildScaffoldMessenger(context: context, msg: 'youAreOffline'.tr(context),iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),snackBarBehavior: SnackBarBehavior.floating);
+                buildScaffoldMessenger(
+                    context: context,
+                    msg: 'youAreOffline'.tr(context),
+                    iconWidget: Icon(Icons.wifi_off,color: AppColors.white,),
+                    snackBarBehavior: SnackBarBehavior.floating);
               }
             },
             edgeOffset: 1,
@@ -57,10 +65,12 @@ class SpecificChefMealsScreen extends StatelessWidget {
                         BlocBuilder<GetSpecificChefMealsCubit,GetSpecificChefMealsState>(
                           builder: (context, state) {
                             return Center(
-                              child: Text('found'.tr(context)+ ' ${isArabic()==false? GetSpecificChefMealsCubit
+                              child: Text('found'.tr(context)+ ' ${isArabic()==false?
+                              GetSpecificChefMealsCubit
                                   .get(context)
                                   .chefMeals
-                                  ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0:translateNumbersToArabic(GetSpecificChefMealsCubit
+                                  ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0:
+                              translateNumbersToArabic(GetSpecificChefMealsCubit
                                   .get(context)
                                   .chefMeals
                                   ?.length ?? GetSpecificChefMealsCubit.get(context).cachedChefMeals?.length??0)} '+ 'meals'.tr(context),
@@ -212,7 +222,7 @@ class SpecificChefMealsScreen extends StatelessWidget {
                         );
                       }
                   },),
-                SliverToBoxAdapter(child: SpaceWidget(height: 39,)),
+                SliverToBoxAdapter(child: SpaceWidget(height: 40,)),
 
 
               ],

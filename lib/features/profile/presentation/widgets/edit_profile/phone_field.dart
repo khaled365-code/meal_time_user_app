@@ -22,11 +22,11 @@ class EditProfilePhoneField extends StatelessWidget {
           inputFormatters:
           [
             FilteringTextInputFormatter.digitsOnly,
+            LengthLimitingTextInputFormatter(11),
           ],
           controller: EditProfileCubit.get(context).phoneController,
           keyboardType: TextInputType.number,
           maxLines: 1,
-          maxLength: 11,
           validator: (value)
           {
             if(value!.isEmpty)

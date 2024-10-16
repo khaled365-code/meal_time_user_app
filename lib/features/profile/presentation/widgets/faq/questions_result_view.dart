@@ -24,7 +24,8 @@ class FaqQuestionsResultView extends StatelessWidget {
             color: AppColors.c1E1E2E
         ),
       ),
-    ) : ListView.separated(
+    ) :
+    ListView.separated(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => OpenedContainer(

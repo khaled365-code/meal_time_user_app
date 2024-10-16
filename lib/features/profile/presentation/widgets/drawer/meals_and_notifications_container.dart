@@ -56,8 +56,6 @@ class MealsAndNotificationsContainer extends StatelessWidget {
           ListTile(
             onTap: () async
             {
-
-
               navigate(context: context, route: Routes.notificationsScreen);
             },
             contentPadding: EdgeInsetsDirectional.zero,

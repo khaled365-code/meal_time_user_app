@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/space_widget.dart';
@@ -75,7 +74,7 @@ class NotificationsScreen extends StatelessWidget {
                             }
                         },
                       ),
-                      SpaceWidget(height: 39,)
+                      SpaceWidget(height: 32,)
 
                     ],
                   ),

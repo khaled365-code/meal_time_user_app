@@ -1,6 +1,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:new_meal_time_app/core/commons/global_cubits/internet_checking_cubit.dart';
 import 'package:new_meal_time_app/core/localization/localization_cubit/localization_cubit.dart';
 import '../../features/auth/data/repos/auth_repo_implementation.dart';
 import '../../features/auth/presentation/cubits/forget_pass_cubit/forget_pass_cubit.dart';
@@ -54,6 +55,7 @@ setUpLocator()
   locator.registerFactory(() => FaqCubit(),);
   locator.registerFactory(() => SettingsCubit(),);
   locator.registerFactory(() => LocalizationCubit(),);
+  locator.registerFactory(() => InternetCheckingCubit(),);
 
 
 }

@@ -11,7 +11,8 @@ import 'notifications_settings_list_tile.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 
-class GeneralSettingsContainer extends StatelessWidget {
+class GeneralSettingsContainer extends StatelessWidget
+{
   const GeneralSettingsContainer({super.key});
 
   @override

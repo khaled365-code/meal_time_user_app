@@ -77,6 +77,7 @@ class ChangePasswordButtonsRow extends StatelessWidget {
               },
               child: FittedBox(
                 fit: BoxFit.scaleDown,
+                  alignment: AlignmentDirectional.centerStart,
                   child: Text('changePassword'.tr(context),
                 style: AppTextStyles.bold16(context).copyWith(
                     color: AppColors.white),))),

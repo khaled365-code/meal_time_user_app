@@ -62,8 +62,11 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   );
 
 
-  editProfileFun({ String? name, String? phone,
-     String? brandName, double? minCharge,
+  editProfileFun({
+     String? name,
+     String? phone,
+     String? brandName,
+    double? minCharge,
      String? disc,}) async
   {
     emit(EditProfileLoadingState());

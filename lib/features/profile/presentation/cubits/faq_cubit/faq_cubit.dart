@@ -38,7 +38,8 @@ class FaqCubit extends Cubit<FaqState> {
   List<QuestionsAndAnswersModel> originalQuestionsAndAnswersList =
   [
 
-    QuestionsAndAnswersModel(question: 'canIAddMeals',
+    QuestionsAndAnswersModel(
+        question: 'canIAddMeals',
         answer: 'answer1'),
     QuestionsAndAnswersModel(
         question: 'whatShouldIfForgetPassword',

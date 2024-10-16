@@ -72,8 +72,8 @@ final Map<String, String> enUs =
 
 
   'details': 'Details',
-  'am': 'صباحًا',
-  'pm': 'مساءً',
+  'am': 'Am',
+  'pm': 'Pm',
   'createdAt': 'created at :',
   'updatedAt': 'updated at :',
   'updateThisMeal': 'Update This Meal',
@@ -240,7 +240,7 @@ final Map<String, String> enUs =
   'meals':'meals',
   'clearAll':'Clear all',
   'delete':'Delete',
-  'profileUpdatedSuccessfully':'Profile updated successfully',
+  'profileUpdatedSuccessfully':'Your profile updated successfully',
 
   'howCanWeHelp':'How can we help you?',
   'enterYourKeyword':'Enter your keyword',
@@ -250,6 +250,7 @@ final Map<String, String> enUs =
   'topQuestions':'Top Questions',
   'viewAll':'View All',
   'noResultFound':'No result found',
+  'chefMealsFetchedSuccessfully':'Your meals fetched successfully',
 
   'canIAddMeals':'Can I add my own meals to the app?',
   'whatShouldIfForgetPassword':'What should I do if I forget password?',
@@ -288,9 +289,9 @@ final Map<String, String> enUs =
 
   'accountSettings':'Account Settings',
   'language':'Language',
-  'allowsLanguageSwitch':'Allows to switch between english\nand arabic as you prefer',
+  'allowsLanguageSwitch':'Switch between english and arabic\nas you prefer',
   'changePassword':'Change Password',
-  'allowsChangePassword':'Allows to change your current password whenever you want',
+  'allowsChangePassword':'Change your current password whenever you want',
 
 
 
@@ -314,6 +315,7 @@ final Map<String, String> enUs =
   'pleaseConfirmYourNewPassword':'please confirm your new password',
   'passwordMustLeast6':'password must be at least 6 characters long',
   'passwordsDoNotMatch':'passwords do not match',
+  'passwordChangedSuccessfully':'Your password updated successfully',
 
 
   'sureDeleteAccount?':'Are you sure you want to delete your account ?',

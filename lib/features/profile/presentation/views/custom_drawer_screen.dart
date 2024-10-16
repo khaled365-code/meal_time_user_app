@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/commons/global_cubits/internet_checking_cubit.dart';
+import '../../../../core/injection/injector.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/space_widget.dart';
 import '../widgets/drawer/drawer_app_bar.dart';
@@ -19,7 +20,7 @@ class CustomDrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InternetCheckingCubit()..checkStreamConnection(),
+      create: (context) => locator<InternetCheckingCubit>()..checkStreamConnection(),
       child: Scaffold(
         backgroundColor: AppColors.white,
         body: SafeArea(

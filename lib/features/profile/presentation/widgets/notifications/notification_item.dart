@@ -2,10 +2,8 @@
 
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import '../../../../../core/commons/commons.dart';
 import '../../../../../core/commons/global_models/local_notifications_model.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -52,7 +50,6 @@ class NotificationItem extends StatelessWidget {
                 ),
                 SpaceWidget(height: 5,),
                 Text(
-                  softWrap: true,
                     notificationModel.body,style: AppTextStyles.regular13(context).copyWith(color: AppColors.c9C9BA6,)),
                 SpaceWidget(height: 10,),
                 RichText(
@@ -64,7 +61,7 @@ class NotificationItem extends StatelessWidget {
                       translateNumbersToArabic(formatDate(dateTime: DateTime.parse(notificationModel.notificationTime),monthName: true,context: context,isArabic: true).toString()),style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)
                     ),
                     TextSpan(text: isArabic()==false?
-                    ' at'+ ' ${formatClock(dateTime: DateTime.parse(notificationModel.notificationTime),)}':
+                    ' at ${formatClock(dateTime: DateTime.parse(notificationModel.notificationTime),)}':
                     ' عند ${translateNumbersToArabic(formatClock(dateTime: DateTime.parse(notificationModel.notificationTime),isArabic: true))}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,)),
                     TextSpan(text: ' ${getAmorPm(DateTime.parse(notificationModel.notificationTime),context)}',style: AppTextStyles.regular12(context).copyWith(color: AppColors.c9C9BA6,))
                   ]

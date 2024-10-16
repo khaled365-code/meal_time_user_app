@@ -43,11 +43,31 @@ class GridSpecificChefMealsItem extends StatelessWidget {
                 ]
               ),
               child: Padding(
-                padding:  EdgeInsetsDirectional.only(start: 16.5.w,end: 29.w),
+                padding:  EdgeInsetsDirectional.only(start: 10.w,end: 10.w),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Spacer(flex: 5,),
+                    meal.name!.contains(' ')?
+                    Column(
+                      children:
+                      [
+                        FittedBox(
+                               fit: BoxFit.scaleDown,
+                               child: Text(meal.name!.split(' ').first,
+                                   style: AppTextStyles.semiBold22(context).copyWith(
+                                       color: AppColors.c32343E
+                                   )),
+                             ),
+                        Text(
+                            meal.name!.split(' ').last,
+                            maxLines: 1,
+                            overflow: TextOverflow.visible,
+                            style: AppTextStyles.semiBold22(context).copyWith(
+                                color: AppColors.c32343E
+                            )),
+                           ],
+                        ):
                     FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(meal.name!,
