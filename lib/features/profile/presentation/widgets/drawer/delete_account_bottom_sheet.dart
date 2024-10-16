@@ -68,59 +68,56 @@ class DeleteAccountBottomSheet extends StatelessWidget {
                 topRight: Radius.circular(25.r),
               )
           ),
-          child: Column(
-            children: [
-              SizedBox(
-                width: 130.w,
-                  height: 100.h,
-                  child: Image.asset(ImageConstants.trashSuitableGif)),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Text('sureDeleteAccount?'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.c32343E,),),
-              ),
-              SpaceWidget(height: 5,),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Text('warningDeleteAccount'.tr(context),style: AppTextStyles.regular15(context).copyWith(color: AppColors.cA4ACAD,),),
-              ),
-              Spacer(),
-              BlocBuilder<DeleteAccountCubit,DeleteAccountState>(
-                builder: (context, state)
-                {
-                  if (state is DeleteMyAccountLoadingState)
-                    {
-                      return Center(
-                        child: SharedLoadingIndicator(),
-                      );
-                    }
-                  else
-                    {
-                      return SharedButton(
-                        customHeight: 50,
-                        btnTextStyle: AppTextStyles.bold19(context).copyWith(
-                          color: AppColors.white,
-                        ),
-                        onPressed: () async
-                        {
-                          if(await InternetConnectionCheckingService.checkInternetConnection()==true)
-                            {
-                              DeleteAccountCubit.get(context).deleteMyAccountFun(chefId: CacheHelper().getData(key: ApiKeys.id));
-                            }
-                          else
-                            {
-                              showDialog(context: context, builder: (context) => NoInternetConnectionDialog(),);
-                            }
-                        },
-                        btnText: 'deleteAccount'.tr(context),);
-                    }
-                },
-              ),
-              Spacer(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Column(
+              children: [
+                SizedBox(
+                  width: 130.w,
+                    height: 100.h,
+                    child: Image.asset(ImageConstants.trashSuitableGif)),
+                Text('sureDeleteAccount?'.tr(context),style: AppTextStyles.bold18(context).copyWith(color: AppColors.c32343E,),),
+                SpaceWidget(height: 5,),
+                Text('warningDeleteAccount'.tr(context),style: AppTextStyles.regular15(context).copyWith(color: AppColors.cA4ACAD,),),
+                Spacer(),
+                BlocBuilder<DeleteAccountCubit,DeleteAccountState>(
+                  builder: (context, state)
+                  {
+                    if (state is DeleteMyAccountLoadingState)
+                      {
+                        return Center(
+                          child: SharedLoadingIndicator(),
+                        );
+                      }
+                    else
+                      {
+                        return SharedButton(
+                          customHeight: 50,
+                          btnTextStyle: AppTextStyles.bold19(context).copyWith(
+                            color: AppColors.white,
+                          ),
+                          onPressed: () async
+                          {
+                            if(await InternetConnectionCheckingService.checkInternetConnection()==true)
+                              {
+                                DeleteAccountCubit.get(context).deleteMyAccountFun(chefId: CacheHelper().getData(key: ApiKeys.id));
+                              }
+                            else
+                              {
+                                showDialog(context: context, builder: (context) => NoInternetConnectionDialog(),);
+                              }
+                          },
+                          btnText: 'deleteAccount'.tr(context),);
+                      }
+                  },
+                ),
+                Spacer(),
 
 
 
-            ]
-             )
+              ]
+               ),
+          )
         ),
       ],
     ),

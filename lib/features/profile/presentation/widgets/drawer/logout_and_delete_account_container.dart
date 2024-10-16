@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
+import '../../../../../core/commons/commons.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -48,7 +48,11 @@ class LogoutAndDeleteAccountContainer extends StatelessWidget {
               ),
             ),
             title: Text('deleteAccount'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            trailing:  isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
           SpaceWidget(height: 16,),
           ListTile(
@@ -72,7 +76,11 @@ class LogoutAndDeleteAccountContainer extends StatelessWidget {
               ),
             ),
             title: Text('logout'.tr(context),style: AppTextStyles.regular16(context).copyWith(color: AppColors.c32343E,)),
-            trailing: SvgPicture.asset(ImageConstants.arrowNextProfileIcon),
+            trailing:  isArabic() == false?
+            SvgPicture.asset(ImageConstants.arrowNextProfileIcon):
+            Transform.rotate(
+                angle: 3.14159,
+                child: SvgPicture.asset(ImageConstants.arrowNextProfileIcon)),
           ),
 
         ],
