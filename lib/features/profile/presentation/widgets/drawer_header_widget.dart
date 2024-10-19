@@ -1,10 +1,8 @@
-import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_meal_time_app/core/commons/commons.dart';
 import 'package:new_meal_time_app/core/localization/app_localization.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../core/commons/global_cubits/internet_checking_cubit.dart';
@@ -24,11 +22,7 @@ class DrawerHeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        BlocBuilder<InternetCheckingCubit, InternetCheckingState>(
-          builder: (context, state) {
-            if (state is InternetIsConnectedState)
-            {
-              return Container(
+        Container(
                 width: 100.w,
                 height: 100.h,
                 decoration: BoxDecoration(
@@ -41,28 +35,8 @@ class DrawerHeaderWidget extends StatelessWidget {
                     DecorationImage(
                         image: AssetImage(ImageConstants.userDefaultImage),
                         fit: BoxFit.fill)
-
                 ),
-              );
-            }
-            else
-            {
-              return Shimmer.fromColors(
-                baseColor: AppColors.white,
-                highlightColor: AppColors.cD1D8E0,
-                child: Container(
-                  width: 100.w,
-                  height: 100.h,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage(ImageConstants.userDefaultImage),
-                          fit: BoxFit.fill)
-                  ),
-                ),
-              );
-            }
-          },),
+              ),
         SpaceWidget(width: 32,),
         Padding(
           padding: EdgeInsetsDirectional.only(end: 55.w),

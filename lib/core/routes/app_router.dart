@@ -123,10 +123,7 @@ class AppRouter {
 
       case Routes.personalInfoScreen:
         return MaterialPageRoute(
-            builder: (context) => BlocProvider.value(
-              value: routeSettings.arguments as InternetCheckingCubit,
-                  child: PersonalInfoScreen(),
-                ),
+            builder: (context) => PersonalInfoScreen(),
             settings: routeSettings);
 
       case Routes.updateMealScreen:

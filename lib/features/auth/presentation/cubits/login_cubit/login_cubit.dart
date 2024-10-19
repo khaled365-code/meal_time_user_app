@@ -28,10 +28,10 @@ class LoginCubit extends Cubit<LoginState> {
   AuthRepoImplementation authRepoImplementation;
 
   TextEditingController emailController=TextEditingController(
-    text:  CacheHelper().getData(key: ApiKeys.savedEmail),
+    text:  CacheHelper().getData(key: ApiKeys.savedEmail)??'',
   );
   TextEditingController passwordController=TextEditingController(
-    text:  CacheHelper().getData(key: ApiKeys.savedPassword),
+    text:  CacheHelper().getData(key: ApiKeys.savedPassword)??'',
   );
 
   GlobalKey<FormState> loginFormKey=GlobalKey();

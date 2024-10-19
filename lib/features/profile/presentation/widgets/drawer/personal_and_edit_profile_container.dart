@@ -30,7 +30,7 @@ class PersonalAndEditProfileBodyContainer extends StatelessWidget {
             contentPadding: EdgeInsetsDirectional.zero,
             onTap: ()
             {
-              navigate(context: context, route: Routes.personalInfoScreen,arg: InternetCheckingCubit.get(context));
+              navigate(context: context, route: Routes.personalInfoScreen);
             },
             leading: Container(
               width: 40.w,

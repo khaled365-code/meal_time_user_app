@@ -165,7 +165,7 @@ final Map<String, String> enUs =
   'confirmPassword':'Confirm Password',
   'passwordsNotMatch':'passwords doesn\'t not match',
   'youMustConfirmPassword':'You must confirm your password',
-  'youHaveSetNewPasswordSuccessfully':'You have set new password successfully',
+  'youHaveSetNewPasswordSuccessfully':'new password set successfully',
 
 
   'signUpStarted':'Please sign up to get started',
@@ -195,6 +195,7 @@ final Map<String, String> enUs =
   'brandNameLeast3':'brand name length must be at least 3 characters long',
   'descriptionLess20':'description length must be at least 20 characters long',
   'signInToEnterAccount':'sign in to enter your account',
+  'loveFastFood':'I love fast food',
   'pleaseUploadCertificate':'Please upload image of your certificate to register as chef with us',
 
 
@@ -316,6 +317,7 @@ final Map<String, String> enUs =
   'passwordMustLeast6':'password must be at least 6 characters long',
   'passwordsDoNotMatch':'passwords do not match',
   'passwordChangedSuccessfully':'Your password updated successfully',
+  'accountCreatedSuccessfully':'Account created successfully',
 
 
   'sureDeleteAccount?':'Are you sure you want to delete your account ?',

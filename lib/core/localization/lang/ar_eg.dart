@@ -325,6 +325,8 @@ final Map<String, String> arEg =
   'passwordMustLeast6': 'يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل',
   'passwordsDoNotMatch': 'كلمات المرور الجديدة غير متطابقة',
   'passwordChangedSuccessfully': 'تم تحديث كلمة المرور بنجاح',
+  'accountCreatedSuccessfully':'تم انشاء حسابك بنجاح',
+
 
 
 

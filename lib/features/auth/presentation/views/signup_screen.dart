@@ -186,9 +186,8 @@ class SignupScreen extends StatelessWidget {
     if (state is SignUpSuccessState)
     {
       buildScaffoldMessenger(
-        iconWidget: SvgPicture.asset(ImageConstants.checkCircleIcon),
           context: context,
-          msg: state.message);
+          msg: 'accountCreatedSuccessfully'.tr(context));
       buildScaffoldMessenger(
           context: context,
           msg: 'signInToEnterAccount'.tr(context));
